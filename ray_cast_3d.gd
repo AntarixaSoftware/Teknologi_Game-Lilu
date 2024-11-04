@@ -1,6 +1,6 @@
 extends RayCast3D
 
-func _process(delta):
+func _process(_delta):
 	if is_colliding():
 		var collide = get_collider()
 		if collide.has_method("interact") && Input.is_action_just_pressed("interact"):
