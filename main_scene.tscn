@@ -54,11 +54,3 @@ mesh = SubResource("BoxMesh_lav77")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 shape = SubResource("BoxShape3D_jkv7i")
-
-
-[node name="tes2" type="Container" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="test" type="RigidBody3D" parent="."]
-
