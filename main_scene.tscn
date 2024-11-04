@@ -204,28 +204,28 @@ mesh = SubResource("BoxMesh_lav77")
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 shape = SubResource("BoxShape3D_jkv7i")
 
-[node name="DoorFinal2" type="StaticBody3D" parent="."]
+[node name="DoorFinal" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52723, 6)
 script = ExtResource("4_fwydy")
 
-[node name="knob" type="StaticBody3D" parent="DoorFinal2"]
+[node name="knob" type="StaticBody3D" parent="DoorFinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Cube_003" type="MeshInstance3D" parent="DoorFinal2/knob"]
+[node name="Cube_003" type="MeshInstance3D" parent="DoorFinal/knob"]
 transform = Transform3D(0.0855008, 0, 0, 0, 0.033293, 0, 0, 0, 0.0419524, -1.6527, 0, -0.00355131)
 mesh = SubResource("ArrayMesh_2guqg")
 skeleton = NodePath("")
 
-[node name="Cube_002" type="MeshInstance3D" parent="DoorFinal2/knob"]
+[node name="Cube_002" type="MeshInstance3D" parent="DoorFinal/knob"]
 transform = Transform3D(3.42357, 0, 0, 0, 7.96489, 0, 0, 0, 0.245897, -1, 0, -0.0180947)
 mesh = SubResource("ArrayMesh_7jtu2")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFinal2/knob"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFinal/knob"]
 transform = Transform3D(3.42357, 0, 0, 0, 7.96489, 0, 0, 0, 0.245897, -1, 0, -0.0180945)
 shape = SubResource("ConvexPolygonShape3D_mawo8")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorFinal2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorFinal"]
 libraries = {
 "": SubResource("AnimationLibrary_v4qkk")
 }
