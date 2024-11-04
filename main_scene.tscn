@@ -66,3 +66,5 @@ shape = SubResource("BoxShape3D_jkv7i")
 [node name="5" type="CollisionShape3D" parent="."]
 
 [node name="scene2" type="CharacterBody3D" parent="."]
+
+[node name="scene3" type="CollisionPolygon3D" parent="."]
