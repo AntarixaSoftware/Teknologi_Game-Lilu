@@ -205,31 +205,31 @@ mesh = SubResource("BoxMesh_lav77")
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 shape = SubResource("BoxShape3D_jkv7i")
 
-[node name="Door2" type="Node3D" parent="."]
+[node name="Door" type="Node3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1, 1.90373, 0)
 
-[node name="Hinge" type="Node3D" parent="Door2"]
+[node name="Hinge" type="Node3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Door_model" type="StaticBody3D" parent="Door2/Hinge"]
+[node name="Door_model" type="StaticBody3D" parent="Door/Hinge"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("4_kvt05")
 
-[node name="Cube_003" type="MeshInstance3D" parent="Door2/Hinge/Door_model"]
+[node name="Cube_003" type="MeshInstance3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(0.0855008, 0, 0, 0, 0.033293, 0, 0, 0, 0.0419524, -0.6527, 0, -0.00355131)
 mesh = SubResource("ArrayMesh_1toj7")
 skeleton = NodePath("")
 
-[node name="Cube_002" type="MeshInstance3D" parent="Door2/Hinge/Door_model"]
+[node name="Cube_002" type="MeshInstance3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(3.42357, 0, 0, 0, 7.96489, 0, 0, 0, 0.245897, 0, 0, -0.0180947)
 mesh = SubResource("ArrayMesh_mm827")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2/Hinge/Door_model"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(3.42357, 0, 0, 0, 7.96489, 0, 0, 0, 0.245897, 0, 0, -0.0180947)
 shape = SubResource("ConvexPolygonShape3D_hofh4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
 libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
