@@ -83,3 +83,8 @@ func add_to_inventory(item_name: String):
 		inventory[item_name] += 1
 	else :
 		inventory[item_name] = 1
+
+func print_inventory():
+	for item in inventory.keys():
+		print(item + ":" + str(inventory[item]))
+	

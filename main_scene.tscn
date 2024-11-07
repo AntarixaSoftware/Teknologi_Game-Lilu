@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=29 format=4 uid="uid://bnvp2w1igs0to"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
 [ext_resource type="ArrayMesh" uid="uid://dtd0gfwa68q5n" path="res://Assets/key.obj" id="5_68nxu"]
 [ext_resource type="Script" path="res://keys.gd" id="5_vd4ax"]
+[ext_resource type="Script" path="res://kuyang.gd" id="7_frbkb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -165,6 +166,10 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhmd2"]
 size = Vector3(0.379639, 0.273193, 1.27136)
 
+[sub_resource type="BoxMesh" id="BoxMesh_uhkc4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41ckx"]
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -243,7 +248,7 @@ libraries = {
 }
 
 [node name="keys" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214622, 1.08138, 2.88588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95712, 1.08064, 8.43358)
 script = ExtResource("5_vd4ax")
 
 [node name="Key" type="MeshInstance3D" parent="keys"]
@@ -252,5 +257,27 @@ mesh = ExtResource("5_68nxu")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="keys"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274658, 0.0250244, -0.135681)
+shape = SubResource("BoxShape3D_fhmd2")
+
+[node name="kuyang" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89473, 0.971048, 5.22912)
+script = ExtResource("7_frbkb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="kuyang"]
+mesh = SubResource("BoxMesh_uhkc4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kuyang"]
+shape = SubResource("BoxShape3D_41ckx")
+
+[node name="keys2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02251, 0.989956, 2.23302)
+script = ExtResource("5_vd4ax")
+
+[node name="Key" type="MeshInstance3D" parent="keys2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000395924, 0.00264466, -0.000886202)
+mesh = ExtResource("5_68nxu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="keys2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274658, 0.0250244, -0.135681)
 shape = SubResource("BoxShape3D_fhmd2")
