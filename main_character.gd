@@ -12,6 +12,8 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
+var inventory = {}
+
 #fov variables
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
@@ -75,3 +77,9 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
 	return pos
+
+func add_to_inventory(item_name: String):
+	if inventory.has(item_name):
+		inventory[item_name] += 1
+	else :
+		inventory[item_name] = 1

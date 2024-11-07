@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=26 format=4 uid="uid://bnvp2w1igs0to"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
 [ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
 [ext_resource type="ArrayMesh" uid="uid://dtd0gfwa68q5n" path="res://Assets/key.obj" id="5_68nxu"]
+[ext_resource type="Script" path="res://keys.gd" id="5_vd4ax"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -161,6 +162,9 @@ _data = {
 "RESET": SubResource("Animation_3wxdy")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhmd2"]
+size = Vector3(0.379639, 0.273193, 1.27136)
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -173,6 +177,7 @@ texture = ExtResource("1_yweky")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="Main Character" type="CharacterBody3D" parent="."]
@@ -237,10 +242,15 @@ libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="keys" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214622, 1.08138, 2.88588)
+script = ExtResource("5_vd4ax")
 
-[node name="Key" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="Key" type="MeshInstance3D" parent="keys"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000395924, 0.00264466, -0.000886202)
 mesh = ExtResource("5_68nxu")
 skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="keys"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274658, 0.0250244, -0.135681)
+shape = SubResource("BoxShape3D_fhmd2")
