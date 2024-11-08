@@ -1,9 +1,12 @@
-[gd_scene load_steps=23 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=28 format=4 uid="uid://bnvp2w1igs0to"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
 [ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
+[ext_resource type="Script" path="res://Interaction/PlayerInteractionHandler.gd" id="4_wqd2a"]
+[ext_resource type="Script" path="res://inventory/ItemData.gd" id="5_qqw06"]
+[ext_resource type="PackedScene" uid="uid://d4lmn7e6dgjss" path="res://inventory/key.tscn" id="6_has45"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,6 +24,14 @@ glow_enabled = true
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kcjq8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ux2"]
+
+[sub_resource type="Resource" id="Resource_b6xwd"]
+script = ExtResource("5_qqw06")
+ItemName = "Key"
+ItemModelPrefab = ExtResource("6_has45")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8gll7"]
+radius = 1.92541
 
 [sub_resource type="BoxMesh" id="BoxMesh_lav77"]
 
@@ -195,6 +206,15 @@ script = ExtResource("3_bt6ct")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
 
+[node name="InteractionArea" type="Area3D" parent="Main Character"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_wqd2a")
+ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
+shape = SubResource("SphereShape3D_8gll7")
+
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -235,3 +255,8 @@ shape = SubResource("ConvexPolygonShape3D_hofh4")
 libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
+
+[node name="Key" parent="." instance=ExtResource("6_has45")]
+
+[connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]
