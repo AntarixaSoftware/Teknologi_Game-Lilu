@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=27 format=4 uid="uid://bnvp2w1igs0to"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
 [ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
+[ext_resource type="Script" path="res://hantu.gd" id="4_86aa5"]
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
@@ -21,10 +22,6 @@ glow_enabled = true
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kcjq8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ux2"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_lav77"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jkv7i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_is81v"]
 resource_name = "Material.002"
@@ -160,6 +157,18 @@ _data = {
 "RESET": SubResource("Animation_3wxdy")
 }
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_16vhh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fe0ry"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_mu67r"]
+vertices = PackedVector3Array(-24.5, 1, -24.5, -24.5, 1, 24.5, 24.5, 1, 24.5, 24.5, 1, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lav77"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkv7i"]
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -195,17 +204,7 @@ script = ExtResource("3_bt6ct")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
 
-[node name="Floor" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-mesh = SubResource("BoxMesh_lav77")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-shape = SubResource("BoxShape3D_jkv7i")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Floor"]
+[node name="Marker3D" type="Marker3D" parent="Main Character"]
 
 [node name="Door" type="Node3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1, 1.90373, 0)
@@ -235,3 +234,30 @@ shape = SubResource("ConvexPolygonShape3D_hofh4")
 libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
+
+[node name="Hantu" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3225, 1.68855, 0)
+script = ExtResource("4_86aa5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hantu"]
+mesh = SubResource("CapsuleMesh_16vhh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hantu"]
+shape = SubResource("CapsuleShape3D_fe0ry")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Hantu"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_mu67r")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_lav77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_jkv7i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Floor"]

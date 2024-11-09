@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+enum PlayerState {ALIVE, DEAD}
+var player_state = PlayerState.ALIVE
+
 var speed 
 const WALK_SPEED = 3.0
 const SPRINT_SPEED = 5.0
@@ -16,12 +19,16 @@ var t_bob = 0.0
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
+var flashlight_on = true
 @onready var flashlight = $Head/Camera3D/SpotLight3D
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+var spawn_point = Vector3(0,2,0)
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	position = spawn_point
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -30,6 +37,10 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _physics_process(delta: float) -> void:
+	if player_state == PlayerState.DEAD:
+		_go_to_main_menu()
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -42,10 +53,8 @@ func _physics_process(delta: float) -> void:
 		speed = WALK_SPEED
 		
 	if Input.is_action_just_pressed("flashlight"):
-		if flashlight.visible == true:
-			flashlight.visible = false
-		else:
-			flashlight.visible = true
+		flashlight.visible = !flashlight.visible
+		flashlight_on = flashlight.visible
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -75,3 +84,9 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
 	return pos
+
+func _go_to_main_menu():
+	pass
+	
+func kill_player():
+	player_state = PlayerState.DEAD
