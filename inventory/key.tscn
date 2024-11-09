@@ -22,7 +22,7 @@ emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 3.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0t1kd"]
-size = Vector3(0.444275, 0.354248, 1.3418)
+size = Vector3(0.517807, 0.354248, 1.3418)
 
 [node name="Key" type="RigidBody3D" node_paths=PackedStringArray("ItemHighlightMesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905871, 1.70101, 2.55034)
@@ -40,5 +40,5 @@ mesh = SubResource("ArrayMesh_1tvuo")
 surface_material_override/0 = SubResource("StandardMaterial3D_3qx2t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0296936, 0.0272217, -0.138672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00707239, 0.0272217, -0.138672)
 shape = SubResource("BoxShape3D_0t1kd")

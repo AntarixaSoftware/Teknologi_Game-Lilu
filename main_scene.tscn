@@ -30,8 +30,8 @@ script = ExtResource("5_qqw06")
 ItemName = "Key"
 ItemModelPrefab = ExtResource("6_has45")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_8gll7"]
-radius = 1.92541
+[sub_resource type="SphereShape3D" id="SphereShape3D_phgp4"]
+radius = 0.524898
 
 [sub_resource type="BoxMesh" id="BoxMesh_lav77"]
 
@@ -208,13 +208,15 @@ script = ExtResource("3_bt6ct")
 [node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
 
 [node name="InteractionArea" type="Area3D" parent="Main Character"]
+transform = Transform3D(0.717386, 0, 0, 0, 2.15134, 0, 0, 0, 1.7151, 0, 0, -0.514962)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_wqd2a")
 ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
-shape = SubResource("SphereShape3D_8gll7")
+transform = Transform3D(2.91269, 0, 0, 0, 0.940191, 0, 0, 0, 1.03709, 0, 0, 0)
+shape = SubResource("SphereShape3D_phgp4")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -258,6 +260,11 @@ libraries = {
 }
 
 [node name="Key" parent="." instance=ExtResource("6_has45")]
+mass = 0.2
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]

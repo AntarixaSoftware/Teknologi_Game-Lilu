@@ -39,8 +39,3 @@ func OnObjectExitedArea(body : Node3D):
 	if (body is InteractableItem and NearbyBodies.has(body)):
 		body.LoseFocus()
 		NearbyBodies.remove_at(NearbyBodies.find(body))
-		
-
-
-func _on_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
