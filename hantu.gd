@@ -5,7 +5,7 @@ var state = HantuState.PATROL
 
 var flashlight_on = true
 const APPROACH_DISTANCE = 100.0
-const ATTACK_DISTANCE = 3.0
+const ATTACK_DISTANCE = 1.0
 
 const SPEED = 5.0
 const ACCEL = SPEED * 1.75
@@ -13,7 +13,7 @@ const ACCEL = SPEED * 1.75
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 @onready var target: Marker3D = $"../Main Character/Marker3D"
 
-var patrol_positions = [Vector3(10,0,10), Vector3(-10,0,10), Vector3(-10,0,-10), Vector3(10,0,-10)]
+var patrol_positions = [Vector3(10, 0, 10), Vector3(-10, 0, 10), Vector3(-10, 0, -10), Vector3(10, 0, -10)]
 var cur_patrol = 0
 
 func _ready():
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			patrol_direction = patrol_direction.normalized()
 			velocity = velocity.lerp(patrol_direction * SPEED, ACCEL * delta )
 			
-			if global_transform.origin.distance_to(patrol_positions[cur_patrol]) < 1.0:
+			if global_transform.origin.distance_to(patrol_positions[cur_patrol]) < 2.0:
 				cur_patrol = (cur_patrol + 1) % patrol_positions.size()
 				
 		HantuState.APPROACH:

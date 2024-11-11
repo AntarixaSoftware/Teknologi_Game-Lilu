@@ -26,6 +26,14 @@ var flashlight_on = true
 
 var spawn_point = Vector3(0,2,0)
 
+const MAX_STAMINA = 100.0
+var stamina = MAX_STAMINA
+const STAMINA_DEPLETE = 20.0
+const STAMINA_RECHARGE = 15.0
+
+var MAX_HEALTH = 100.0
+var health = MAX_HEALTH
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	position = spawn_point
@@ -44,13 +52,29 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_pressed("sprint"):
+		
+	if Input.is_action_pressed("sprint") and stamina > 0:
 		speed = SPRINT_SPEED
+		stamina -= STAMINA_DEPLETE * delta
+		stamina = max(stamina, 0)
+		print("sprinting..")
+		if stamina == 0:
+			print("habis")
 	else:
 		speed = WALK_SPEED
+		if stamina < MAX_STAMINA:
+			stamina += STAMINA_RECHARGE * delta
+			stamina = min(stamina, MAX_STAMINA)
+			print("recharging..")
+			if stamina == MAX_STAMINA:
+				print("udah")
+				
+	if Input.is_action_pressed("dead"):
+		kill_player()
 		
 	if Input.is_action_just_pressed("flashlight"):
 		flashlight.visible = !flashlight.visible
@@ -86,7 +110,14 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func _go_to_main_menu():
-	pass
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	
 func kill_player():
 	player_state = PlayerState.DEAD
+
+func take_damage(amount: float) -> void:
+	if player_state == PlayerState.ALIVE:
+		health -= amount
+		health = max(health, 0)
+		if health <= 0:
+			kill_player()
