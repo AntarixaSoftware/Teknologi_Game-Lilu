@@ -5,7 +5,7 @@ var state = HantuState.PATROL
 
 var flashlight_on = true
 const APPROACH_DISTANCE = 100.0
-const ATTACK_DISTANCE = 1.0
+const ATTACK_DISTANCE = 1.5
 
 const SPEED = 5.0
 const ACCEL = SPEED * 1.75
@@ -15,6 +15,10 @@ const ACCEL = SPEED * 1.75
 
 var patrol_positions = [Vector3(10, 0, 10), Vector3(-10, 0, 10), Vector3(-10, 0, -10), Vector3(10, 0, -10)]
 var cur_patrol = 0
+
+const ATTACK_CD = 1.0
+var timer_attack = 0.0
+const DAMAGE = 25.0
 
 func _ready():
 	nav.target_position = patrol_positions[cur_patrol]
@@ -54,5 +58,13 @@ func _physics_process(delta: float) -> void:
 			
 		HantuState.ATTACK:
 			velocity = Vector3.ZERO
+			_attack_player(delta, main_character)
 			
 	move_and_slide()
+
+func _attack_player(delta: float, main_character):
+	timer_attack -= delta
+	if timer_attack <= 0:
+		main_character.take_damage(DAMAGE)
+		print("kena damage")
+		timer_attack = ATTACK_CD
