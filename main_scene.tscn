@@ -187,7 +187,7 @@ visible = false
 shadow_enabled = true
 
 [node name="Main Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16082, 1.57613, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55871, 1.57613, -7.55049)
 script = ExtResource("1_ahtcp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Main Character"]
@@ -236,9 +236,10 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1, 1.90373, 0)
 [node name="Hinge" type="Node3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Door_model" type="StaticBody3D" parent="Door/Hinge"]
+[node name="Door_model" type="StaticBody3D" parent="Door/Hinge" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("4_kvt05")
+player = NodePath("../../../Main Character")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(0.0855008, 0, 0, 0, 0.033293, 0, 0, 0, 0.0419524, -0.6527, 0, -0.00355131)
@@ -259,7 +260,12 @@ libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
 
+[node name="DoorMessage" type="Label" parent="Door"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Key" parent="." instance=ExtResource("6_has45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905871, 1.70101, -2.55345)
 mass = 0.2
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]

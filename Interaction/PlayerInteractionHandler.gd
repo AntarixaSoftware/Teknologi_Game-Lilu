@@ -3,12 +3,11 @@ extends Area3D
 @export var ItemTypes : Array[ItemData] = []
 
 var NearbyBodies : Array[InteractableItem]
-
+var has_key : bool = false
 
 func _input(event : InputEvent) -> void:
 	if (event.is_action_pressed("interact")):
 		PickupNearestItem()
-		
 
 func PickupNearestItem():
 	var nearestItem : InteractableItem = null
@@ -25,6 +24,9 @@ func PickupNearestItem():
 		for i in ItemTypes.size():
 			if (ItemTypes[i].ItemModelPrefab != null and ItemTypes[i].ItemModelPrefab.resource_path == itemPrefab):
 				print("Item id:" + str(i) + " ItemName:" + ItemTypes[i].ItemName)
+				if ItemTypes[i].ItemName == "Key":
+					has_key = true
+					print("Kunci diambil!!!")
 				return
 		
 		printerr("Item not found")
