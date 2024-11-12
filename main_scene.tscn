@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=25 format=4 uid="uid://bnvp2w1igs0to"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
 [ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
+[ext_resource type="Script" path="res://portal.gd" id="5_pmi5f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -160,6 +161,8 @@ _data = {
 "RESET": SubResource("Animation_3wxdy")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcfww"]
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -235,3 +238,13 @@ shape = SubResource("ConvexPolygonShape3D_hofh4")
 libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("main_scene")]
+transform = Transform3D(1, 0, 0, 0, 2.91771, 0, 0, 0, 1.8097, -1.13467, 1.97339, -2.51392)
+script = ExtResource("5_pmi5f")
+main_scene = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_lcfww")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
