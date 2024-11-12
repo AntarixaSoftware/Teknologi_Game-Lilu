@@ -236,7 +236,7 @@ libraries = {
 }
 
 [node name="Hantu" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3225, 1.68855, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3225, 1.51857, 0)
 script = ExtResource("4_86aa5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Hantu"]
