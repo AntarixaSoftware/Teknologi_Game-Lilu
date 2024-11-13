@@ -7,7 +7,9 @@ extends Area3D
 	
 func _on_body_entered(body):
 	if body.name == "Main Character":
-		main_scene.visible = false
+		GameState.save_state(body.global_transform.origin, get_tree().current_scene.name)
+		
+		get_tree().current_scene.queue_free()
 		
 		var new_scene = load(alam_lain_path).instantiate()
 		get_tree().root.add_child(new_scene)
