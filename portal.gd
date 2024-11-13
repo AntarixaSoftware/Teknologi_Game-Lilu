@@ -1,7 +1,7 @@
 extends Area3D
 
 @export var alam_lain_path : String = "res://Scenes/alam_lain.tscn"
-@export var main_scene : Node
+@export var main_scene : Node 
 # Called when the node enters the scene tree for the first time.
 
 	
