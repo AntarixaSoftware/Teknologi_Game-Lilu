@@ -4,14 +4,10 @@ extends Area3D
 
 func _on_body_entered(body):
 	if body.name == "Main Character":
-		if get_tree().current_scene != null:
-			get_tree().current_scene.queue_free()
-		
-		var main_scene = load(main_scene_path).instantiate()
-		get_tree().root.add_child(main_scene)
-		
-		var saved_state = GameState.load_state()
-		
-		if saved_state.has("player_position") and main_scene.has_node("Player"):
-			var player = main_scene.get_node("Player") as CharacterBody3D
-			player.global_transform.origin = saved_state["player_position"]
+		call_deferred("load_main_scene")
+
+func load_main_scene() -> void:
+	var main_scene = load(main_scene_path) as PackedScene
+	var saved_state = GameState.load_state()
+	print("Saved state: ", saved_state)
+	get_tree().change_scene_to_packed(main_scene)

@@ -9,7 +9,8 @@ func _on_body_entered(body):
 	if body.name == "Main Character":
 		GameState.save_state(body.global_transform.origin, get_tree().current_scene.name)
 		
-		get_tree().current_scene.queue_free()
-		
-		var new_scene = load(alam_lain_path).instantiate()
-		get_tree().root.add_child(new_scene)
+		call_deferred("change_scene_to_alam_lain")
+
+func change_scene_to_alam_lain():
+	var new_scene = load(alam_lain_path) as PackedScene
+	get_tree().change_scene_to_packed(new_scene)
