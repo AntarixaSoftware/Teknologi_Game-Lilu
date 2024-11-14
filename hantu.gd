@@ -69,6 +69,7 @@ func _physics_process(delta: float) -> void:
 				
 		HantuState.APPROACH:
 			if is_paused:
+				velocity = Vector3.ZERO
 				_rotate_to_target(delta)
 				timer_pause -= delta
 				if timer_pause <= 0:
