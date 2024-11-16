@@ -4,6 +4,7 @@ extends Area3D
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
+var has_puzzle = false
 
 func _input(event : InputEvent) -> void:
 	if (event.is_action_pressed("interact")):
