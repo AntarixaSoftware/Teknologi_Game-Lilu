@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=22 format=4 uid="uid://bnvp2w1igs0to"]
 
-[ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
-[ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
+[ext_resource type="PackedScene" uid="uid://cgr4newwtffo1" path="res://Scenes/main_character.tscn" id="2_f00bk"]
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
 [ext_resource type="Script" path="res://portal.gd" id="5_pmi5f"]
 
@@ -18,10 +17,6 @@ background_mode = 2
 sky = SubResource("Sky_jnxhr")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_kcjq8"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ux2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lav77"]
 
@@ -177,26 +172,7 @@ texture = ExtResource("1_yweky")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Main Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16082, 1.57613, 0)
-script = ExtResource("1_ahtcp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Main Character"]
-mesh = SubResource("CapsuleMesh_kcjq8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character"]
-shape = SubResource("CapsuleShape3D_l2ux2")
-
-[node name="Head" type="Node3D" parent="Main Character"]
-
-[node name="Camera3D" type="Camera3D" parent="Main Character/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="RayCast3D" type="RayCast3D" parent="Main Character/Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.48488e-08, 0, -0.480488)
-script = ExtResource("3_bt6ct")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
+[node name="Main Character" parent="." instance=ExtResource("2_f00bk")]
 
 [node name="Floor" type="StaticBody3D" parent="."]
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgr4newwtffo1"]
+
+[ext_resource type="Script" path="res://main_character.gd" id="1_fr41i"]
+[ext_resource type="Script" path="res://ray_cast_3d.gd" id="2_1eekv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kcjq8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ux2"]
+
+[node name="Main Character" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16082, 1.57613, 0)
+script = ExtResource("1_fr41i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_kcjq8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l2ux2")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.48488e-08, 0, -0.480488)
+script = ExtResource("2_1eekv")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
