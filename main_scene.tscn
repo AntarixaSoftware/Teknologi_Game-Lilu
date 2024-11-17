@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=48 format=4 uid="uid://bne15ltl47geu"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://prr48pqcs53e" path="res://inventory/pz_2.tscn" id="8_qjcd3"]
 [ext_resource type="PackedScene" uid="uid://c8fewg57nkmb3" path="res://inventory/pz_3.tscn" id="9_xfisl"]
 [ext_resource type="Script" path="res://inventory/InteractableItem.gd" id="10_rkc4v"]
+[ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://inventory/pz_4.tscn" id="11_ewgqc"]
+[ext_resource type="Script" path="res://map.gd" id="13_8tpk4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -91,6 +93,11 @@ _bundled = {
 script = ExtResource("5_qqw06")
 ItemName = "Pz4"
 ItemModelPrefab = SubResource("PackedScene_iy628")
+
+[sub_resource type="Resource" id="Resource_vg8rb"]
+script = ExtResource("5_qqw06")
+ItemName = "Pz4"
+ItemModelPrefab = ExtResource("11_ewgqc")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_phgp4"]
 radius = 0.524898
@@ -233,6 +240,19 @@ _data = {
 "RESET": SubResource("Animation_3wxdy")
 }
 
+[sub_resource type="Animation" id="Animation_1rpgh"]
+resource_name = "blur"
+length = 0.3
+
+[sub_resource type="Animation" id="Animation_o7bm8"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llk07"]
+_data = {
+"RESET": SubResource("Animation_o7bm8"),
+"blur": SubResource("Animation_1rpgh")
+}
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -274,7 +294,7 @@ transform = Transform3D(0.717386, 0, 0, 0, 2.15134, 0, 0, 0, 1.7151, 0, 0, -0.51
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_wqd2a")
-ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd"), SubResource("Resource_7831o"), SubResource("Resource_c24ba"), SubResource("Resource_xcfau"), SubResource("Resource_q6lcb")])
+ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd"), SubResource("Resource_7831o"), SubResource("Resource_c24ba"), SubResource("Resource_xcfau"), SubResource("Resource_q6lcb"), SubResource("Resource_vg8rb")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
 transform = Transform3D(2.91269, 0, 0, 0, 0.940191, 0, 0, 0, 1.03709, 0, 0, 0)
@@ -336,6 +356,28 @@ mass = 0.2
 
 [node name="Pz3" parent="." instance=ExtResource("9_xfisl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79, 0.922397, -8.03046)
+
+[node name="Pz4" parent="." instance=ExtResource("11_ewgqc")]
+
+[node name="Map" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_8tpk4")
+
+[node name="PanelContainer" type="PanelContainer" parent="Map"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 163.0
+offset_right = 506.0
+offset_bottom = 207.0
+scale = Vector2(6.90662, 6.50689)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map"]
+libraries = {
+"": SubResource("AnimationLibrary_llk07")
+}
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]

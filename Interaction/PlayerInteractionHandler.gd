@@ -1,10 +1,12 @@
 extends Area3D
-
 @export var ItemTypes : Array[ItemData] = []
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
-var has_puzzle = false
+var has_puzzle : bool = false
+
+const REQUIRED_PUZZLE_ITEMS = ["Pz1", "Pz2", "Pz3", "Pz4"]
+var collected_puzzle_items : Array[String] = []
 
 func _input(event : InputEvent) -> void:
 	if (event.is_action_pressed("interact")):
@@ -28,10 +30,23 @@ func PickupNearestItem():
 				if ItemTypes[i].ItemName == "Key":
 					has_key = true
 					print("Kunci diambil!!!")
+				elif REQUIRED_PUZZLE_ITEMS.has(ItemTypes[i].ItemName):
+					AddPuzzleItem(ItemTypes[i].ItemName)
 				return
 		
 		printerr("Item not found")
 
+func AddPuzzleItem(item_name : String):
+	if not collected_puzzle_items.has(item_name):
+		collected_puzzle_items.append(item_name)
+		print("Puzzle item diambil: " + item_name)
+		CheckPuzzleCompletion()
+
+func CheckPuzzleCompletion():
+	if collected_puzzle_items.size() == REQUIRED_PUZZLE_ITEMS.size():
+		has_puzzle = true
+		emit_signal("puzzle_collected", has_puzzle)
+		print("Semua item puzzle diambil! has_puzzle = true")
 
 func OnObjectEnteredArea(body : Node3D ):
 	if (body is InteractableItem):
