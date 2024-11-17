@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://bne15ltl47geu"]
+[gd_scene load_steps=49 format=4 uid="uid://bne15ltl47geu"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://inventory/InteractableItem.gd" id="10_rkc4v"]
 [ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://inventory/pz_4.tscn" id="11_ewgqc"]
 [ext_resource type="Script" path="res://map.gd" id="13_8tpk4"]
+[ext_resource type="Texture2D" uid="uid://b33s5yghanau4" path="res://Assets/map.png" id="14_8nu4p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -368,11 +369,15 @@ script = ExtResource("13_8tpk4")
 
 [node name="PanelContainer" type="PanelContainer" parent="Map"]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 163.0
-offset_right = 506.0
-offset_bottom = 207.0
-scale = Vector2(6.90662, 6.50689)
+offset_left = 395.0
+offset_top = 106.0
+offset_right = 1114.0
+offset_bottom = 824.0
+scale = Vector2(0.549479, 0.528621)
+
+[node name="TextureRect" type="TextureRect" parent="Map/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("14_8nu4p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Map"]
 libraries = {

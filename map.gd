@@ -5,7 +5,7 @@ var is_map_visible = false
 
 func _ready():
 	map_control.visible = false
-	var player_interaction = get_node("/root/Main Character/InteractinArea")  # Ganti sesuai path
+	var player_interaction = get_node("/root/Main Character/InteractionArea")  # Ganti sesuai path
 
 
 func _input(event):
