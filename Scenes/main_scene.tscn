@@ -1,22 +1,16 @@
-[gd_scene load_steps=21 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=31 format=4 uid="uid://bnvp2w1igs0to"]
 
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_g0ouo"]
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="2_j6e7j"]
 [ext_resource type="Script" path="res://Scripts/ray_cast_3d.gd" id="3_344bk"]
 [ext_resource type="Script" path="res://Scripts/door_model.gd" id="4_eyqj6"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_jnxhr"]
-sky_material = SubResource("ProceduralSkyMaterial_21jgi")
-
-[sub_resource type="Environment" id="Environment_y6w44"]
-background_mode = 2
-sky = SubResource("Sky_jnxhr")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="5_jalsa"]
+[ext_resource type="Resource" path="res://Terrain/data.hterrain" id="6_4k6f0"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_cfqx6"]
+[ext_resource type="Texture2D" uid="uid://b2pog3qurwm52" path="res://Scenes/main_scene_slot0_albedo_bump.png" id="7_4bwo6"]
+[ext_resource type="Texture2D" uid="uid://c77m37qx817o3" path="res://Scenes/main_scene_slot0_normal_roughness.png" id="8_uqj5v"]
+[ext_resource type="Texture2D" uid="uid://ch7wcxs4tyxu1" path="res://Scenes/main_scene_slot1_albedo_bump.png" id="9_y25f8"]
+[ext_resource type="Texture2D" uid="uid://c6j65lnj3noyg" path="res://Scenes/main_scene_slot1_normal_roughness.png" id="11_6hj2i"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kcjq8"]
 
@@ -156,10 +150,28 @@ _data = {
 "RESET": SubResource("Animation_3wxdy")
 }
 
+[sub_resource type="Resource" id="Resource_vfm5r"]
+script = ExtResource("6_cfqx6")
+mode = 0
+textures = [[ExtResource("7_4bwo6"), ExtResource("9_y25f8")], [ExtResource("8_uqj5v"), ExtResource("11_6hj2i")]]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv4vl"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dn0mf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kjf3k"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jye2u"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ypm68"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_y6w44")
 
 [node name="Crosshair" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -171,7 +183,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Main Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16082, 1.57613, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.161, 9.02578, -122.036)
 script = ExtResource("2_j6e7j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Main Character"]
@@ -219,3 +231,60 @@ shape = SubResource("ConvexPolygonShape3D_hofh4")
 libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="HTerrain" type="Node3D" parent="StaticBody3D"]
+script = ExtResource("5_jalsa")
+centered = true
+_terrain_data = ExtResource("6_4k6f0")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_vfm5r")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="Border" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border"]
+transform = Transform3D(1, 0, 0, 0, 25, 0, 0, 0, 258, -128.5, 12, 0)
+shape = SubResource("ConvexPolygonShape3D_gv4vl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Border/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_dn0mf")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Border"]
+transform = Transform3D(1, 0, 0, 0, 25, 0, 0, 0, 258, 128.5, 12, 0)
+shape = SubResource("ConvexPolygonShape3D_kjf3k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Border/CollisionShape3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_dn0mf")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Border"]
+transform = Transform3D(-4.37114e-08, 0, 256, 0, 25, 0, -1, 0, -1.11901e-05, 0, 12, 128.5)
+shape = SubResource("ConvexPolygonShape3D_jye2u")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Border/CollisionShape3D3"]
+mesh = SubResource("BoxMesh_dn0mf")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Border"]
+transform = Transform3D(-4.37114e-08, 0, 256, 0, 25, 0, -1, 0, -1.11901e-05, 0, 12, -128.5)
+shape = SubResource("ConvexPolygonShape3D_ypm68")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Border/CollisionShape3D4"]
+mesh = SubResource("BoxMesh_dn0mf")
+skeleton = NodePath("../..")
