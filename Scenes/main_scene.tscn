@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cyuwnq5oqdu3d"]
+[gd_scene load_steps=38 format=4 uid="uid://pkgi3fxnr275"]
 
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_g0ouo"]
 [ext_resource type="PackedScene" path="res://Scenes/world_environment.tscn" id="1_w55vp"]
