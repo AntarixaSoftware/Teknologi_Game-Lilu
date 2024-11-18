@@ -31,6 +31,10 @@ func _ready():
 	nav.target_position = patrol_positions[cur_patrol]
 	
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	
 	var main_character = $"../Main Character"
 	
 	var distance = global_transform.origin.distance_to(target.global_transform.origin)
