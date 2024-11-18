@@ -1,5 +1,8 @@
 extends Area3D
+
+signal puzzle_collected(has_puzzle: bool)
 @export var ItemTypes : Array[ItemData] = []
+@onready var map_message = $MapMessage
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
@@ -46,7 +49,10 @@ func CheckPuzzleCompletion():
 	if collected_puzzle_items.size() == REQUIRED_PUZZLE_ITEMS.size():
 		has_puzzle = true
 		emit_signal("puzzle_collected", has_puzzle)
-		print("Semua item puzzle diambil! has_puzzle = true")
+		map_message.visible = true
+		map_message.text = "You can now Access Map! Press M to show Map"
+		await get_tree().create_timer(3.0).timeout
+		map_message.visible = false
 
 func OnObjectEnteredArea(body : Node3D ):
 	if (body is InteractableItem):

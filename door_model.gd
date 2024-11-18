@@ -2,6 +2,7 @@ extends StaticBody3D
 
 var toggle = false
 var interactable = true
+var message_shown : bool = false
 @onready var animation: AnimationPlayer = $"../../AnimationPlayer"
 @onready var door_message = $"../../DoorMessage"
 @export var player : CharacterBody3D
@@ -18,7 +19,9 @@ func interact():
 				animation.play("Close")
 			if toggle == true:
 				animation.play("Open")
-				show_door_message("Door Unlocked!")
+				if not message_shown :
+					show_door_message("Door Unlocked!")
+					message_shown = true
 
 			await get_tree().create_timer(1.0, false).timeout
 			interactable = true

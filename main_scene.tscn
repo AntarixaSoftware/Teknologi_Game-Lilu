@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bne15ltl47geu"]
+[gd_scene load_steps=49 format=4 uid="uid://kg57m8oslf77"]
 
 [ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -241,12 +241,12 @@ _data = {
 "RESET": SubResource("Animation_3wxdy")
 }
 
+[sub_resource type="Animation" id="Animation_o7bm8"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_1rpgh"]
 resource_name = "blur"
 length = 0.3
-
-[sub_resource type="Animation" id="Animation_o7bm8"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_llk07"]
 _data = {
@@ -300,6 +300,11 @@ ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd"), SubRes
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
 transform = Transform3D(2.91269, 0, 0, 0, 0.940191, 0, 0, 0, 1.03709, 0, 0, 0)
 shape = SubResource("SphereShape3D_phgp4")
+
+[node name="MapMessage" type="Label" parent="Main Character/InteractionArea"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
