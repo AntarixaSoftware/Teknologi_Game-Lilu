@@ -7,8 +7,18 @@ func _on_body_entered(body):
 		call_deferred("load_main_scene")
 
 func load_main_scene() -> void:
-	GameState.load_state()
+	print("Changing to main scene...")
 	var main_scene = load(main_scene_path) as PackedScene
-	var saved_state = GameState.load_state()
-	print("Saved state: ", saved_state)
 	get_tree().change_scene_to_packed(main_scene)
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 0.1  # Tunggu 100ms
+	timer.one_shot = true
+	timer.start()
+	
+	await timer.timeout  # Tunggu hingga Timer selesai
+	timer.queue_free()
+	
+	if get_tree().current_scene == null:
+		print("Error: Current scene masih null setelah timer.")
+		return

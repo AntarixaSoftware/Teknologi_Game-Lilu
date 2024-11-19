@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://632k6fil53yx"]
 
-[ext_resource type="PackedScene" uid="uid://cgr4newwtffo1" path="res://Scenes/main_character.tscn" id="3_clbdy"]
+[ext_resource type="PackedScene" path="res://Scenes/main_character.tscn" id="3_clbdy"]
 [ext_resource type="Script" path="res://door_model.gd" id="3_yh4md"]
 [ext_resource type="Script" path="res://Scenes/portal_back.gd" id="4_72p10"]
 

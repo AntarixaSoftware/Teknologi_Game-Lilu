@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://bnvp2w1igs0to"]
+[gd_scene load_steps=23 format=4 uid="uid://kg57m8oslf77"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_41ogx"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
-[ext_resource type="PackedScene" uid="uid://cgr4newwtffo1" path="res://Scenes/main_character.tscn" id="2_f00bk"]
+[ext_resource type="PackedScene" path="res://Scenes/main_character.tscn" id="2_f00bk"]
 [ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
 [ext_resource type="Script" path="res://portal.gd" id="5_pmi5f"]
 
@@ -159,6 +160,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_lcfww"]
 
 [node name="Main Scene" type="Node3D"]
+script = ExtResource("1_41ogx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y6w44")
