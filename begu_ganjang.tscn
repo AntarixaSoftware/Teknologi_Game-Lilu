@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dp2ef8mjfsjb6"]
+[gd_scene load_steps=12 format=4 uid="uid://hsx7y46jwifh"]
 
 [ext_resource type="Script" path="res://Scripts/begu_ganjang.gd" id="1_l0xtq"]
 [ext_resource type="Texture2D" uid="uid://dlt2a127a64sg" path="res://Assets/3D/Begu_ganjang_HM_fixed_animated_Material.png" id="2_1oqie"]
@@ -1799,8 +1799,6 @@ _data = {
 [node name="Begu Ganjang" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7383, 6.06919, 71.4334)
 script = ExtResource("1_l0xtq")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

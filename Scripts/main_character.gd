@@ -6,7 +6,7 @@ const SPRINT_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 var gravity = 9.8
-
+var health = 100
 #bobbing variable
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
@@ -75,3 +75,14 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
 	return pos
+	
+func take_damage(amount: int):
+	health -= amount
+	print("Player took", amount, "damage. Health:", health)
+	if health <= 0:
+		_die()
+
+func _die():
+	print("Player has died!")
+	# Exit the game when the player dies
+	get_tree().quit()
