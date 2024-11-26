@@ -1,9 +1,9 @@
-[gd_scene load_steps=49 format=4 uid="uid://kg57m8oslf77"]
+[gd_scene load_steps=52 format=4 uid="uid://c2mg78tuaxa4f"]
 
-[ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
+[ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
-[ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
-[ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
+[ext_resource type="Script" path="res://Scripts/ray_cast_3d.gd" id="3_bt6ct"]
+[ext_resource type="Script" path="res://Scripts/door_model.gd" id="4_kvt05"]
 [ext_resource type="Script" path="res://Interaction/PlayerInteractionHandler.gd" id="4_wqd2a"]
 [ext_resource type="Script" path="res://inventory/ItemData.gd" id="5_qqw06"]
 [ext_resource type="PackedScene" uid="uid://d4lmn7e6dgjss" path="res://inventory/key.tscn" id="6_has45"]
@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://c8fewg57nkmb3" path="res://inventory/pz_3.tscn" id="9_xfisl"]
 [ext_resource type="Script" path="res://inventory/InteractableItem.gd" id="10_rkc4v"]
 [ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://inventory/pz_4.tscn" id="11_ewgqc"]
-[ext_resource type="Script" path="res://map.gd" id="13_8tpk4"]
+[ext_resource type="Script" path="res://Scripts/map.gd" id="13_8tpk4"]
 [ext_resource type="Texture2D" uid="uid://b33s5yghanau4" path="res://Assets/map.png" id="14_8nu4p"]
+[ext_resource type="Script" path="res://Scripts/quest.gd" id="15_glpea"]
+[ext_resource type="Script" path="res://house.gd" id="15_pk0sp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -254,6 +256,8 @@ _data = {
 "blur": SubResource("Animation_1rpgh")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yr8x"]
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -389,5 +393,22 @@ libraries = {
 "": SubResource("AnimationLibrary_llk07")
 }
 
+[node name="House" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.98924, 0, 0, 0, 4.12035, -0.930943, 1.35865, 2.11955)
+
+[node name="house_area" type="Area3D" parent="House" node_paths=PackedStringArray("quest")]
+script = ExtResource("15_pk0sp")
+quest = NodePath("house")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/house_area"]
+shape = SubResource("BoxShape3D_7yr8x")
+
+[node name="house" type="Node2D" parent="House/house_area"]
+script = ExtResource("15_glpea")
+quest_name = "First Step"
+quest_desc = "Go to the abandoned house"
+reached_goal_text = "nice"
+
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]
+[connection signal="body_entered" from="House/house_area" to="House/house_area" method="_on_body_entered"]

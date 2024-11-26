@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcah85ftgpw7s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w2ppi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4jptg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ljde5"]
+
+[node name="GameManager" type="Node2D"]
+
+[node name="QuestBox" type="CanvasLayer" parent="."]
+
+[node name="layer2" type="Sprite2D" parent="QuestBox"]
+modulate = Color(0.185523, 0.181021, 2.40654e-08, 1)
+position = Vector2(222.375, 90.625)
+scale = Vector2(412.75, 111.25)
+texture = SubResource("CanvasTexture_w2ppi")
+
+[node name="Background" type="Sprite2D" parent="QuestBox"]
+modulate = Color(0.489224, 0.444586, 0.133466, 1)
+material = SubResource("ShaderMaterial_4jptg")
+position = Vector2(222.25, 90.25)
+scale = Vector2(395, 92.5)
+texture = SubResource("CanvasTexture_ljde5")
+
+[node name="QuestName" type="RichTextLabel" parent="QuestBox"]
+offset_left = 37.75
+offset_top = 45.25
+offset_right = 428.75
+offset_bottom = 71.25
+text = "ROY"
+
+[node name="QuestDesc" type="RichTextLabel" parent="QuestBox"]
+offset_left = 40.75
+offset_top = 69.25
+offset_right = 411.75
+offset_bottom = 131.25
+text = "Sebastian"
