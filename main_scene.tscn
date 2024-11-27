@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=58 format=4 uid="uid://c2mg78tuaxa4f"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -15,7 +15,9 @@
 [ext_resource type="Script" path="res://Scripts/map.gd" id="13_8tpk4"]
 [ext_resource type="Texture2D" uid="uid://b33s5yghanau4" path="res://Assets/map.png" id="14_8nu4p"]
 [ext_resource type="Script" path="res://Scripts/quest.gd" id="15_glpea"]
-[ext_resource type="Script" path="res://house.gd" id="15_pk0sp"]
+[ext_resource type="Script" path="res://Scripts/house.gd" id="15_pk0sp"]
+[ext_resource type="Script" path="res://Scripts/cabin_area.gd" id="17_ege66"]
+[ext_resource type="Script" path="res://Scripts/inside_cabin.gd" id="18_gwi56"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -258,6 +260,28 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7yr8x"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hn1pe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmipd"]
+size = Vector3(4.76697, 1, 4.53174)
+
+[sub_resource type="GDScript" id="GDScript_31n2u"]
+script/source = "extends Area3D
+
+@export var quest : Quest
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		if body.name == \"Main Character\":
+			if quest.quest_status == quest.QuestStatus.started:
+				quest.reached_goal()
+				await get_tree().create_timer(2.0).timeout
+				if quest.quest_status == quest.QuestStatus.reached_goal:
+					quest.finished_quest()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjn57"]
+
 [node name="Main Scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -294,21 +318,23 @@ script = ExtResource("3_bt6ct")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
 
-[node name="InteractionArea" type="Area3D" parent="Main Character"]
+[node name="InteractionArea" type="Area3D" parent="Main Character" node_paths=PackedStringArray("quest")]
 transform = Transform3D(0.717386, 0, 0, 0, 2.15134, 0, 0, 0, 1.7151, 0, 0, -0.514962)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_wqd2a")
 ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd"), SubResource("Resource_7831o"), SubResource("Resource_c24ba"), SubResource("Resource_xcfau"), SubResource("Resource_q6lcb"), SubResource("Resource_vg8rb")])
+quest = NodePath("key")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
 transform = Transform3D(2.91269, 0, 0, 0, 0.940191, 0, 0, 0, 1.03709, 0, 0, 0)
 shape = SubResource("SphereShape3D_phgp4")
 
-[node name="MapMessage" type="Label" parent="Main Character/InteractionArea"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="key" type="Node2D" parent="Main Character/InteractionArea"]
+script = ExtResource("15_glpea")
+quest_name = "Find a key"
+quest_desc = "Find a key to unlock the Mansion"
+reached_goal_text = "You've found the key! lets go"
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -369,12 +395,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79, 0.922397, -8.03046)
 
 [node name="Pz4" parent="." instance=ExtResource("11_ewgqc")]
 
-[node name="Map" type="Control" parent="."]
+[node name="Map" type="Control" parent="." node_paths=PackedStringArray("quest")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_8tpk4")
+quest = NodePath("Puzzle")
 
 [node name="PanelContainer" type="PanelContainer" parent="Map"]
 layout_mode = 0
@@ -397,24 +424,77 @@ libraries = {
 script = ExtResource("15_glpea")
 quest_name = "Collect puzzle"
 quest_desc = "Find and Collect 4 pieces of puzzle around this house"
-reached_goal_text = "Congratulations! you can now accsess Map./n press M"
+reached_goal_text = "Congratulations! you can now accsess Map! Press M to show Map. "
 
-[node name="House" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 3.98924, 0, 0, 0, 4.12035, -0.930943, 1.35865, 2.11955)
+[node name="Accident" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.98924, 0, 0, 0, 4.12035, 2.36764, 1.35865, -6.51566)
 
-[node name="house_area" type="Area3D" parent="House" node_paths=PackedStringArray("quest")]
+[node name="Accident_area" type="Area3D" parent="Accident" node_paths=PackedStringArray("quest")]
 script = ExtResource("15_pk0sp")
-quest = NodePath("house")
+quest = NodePath("accident")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="House/house_area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Accident/Accident_area"]
 shape = SubResource("BoxShape3D_7yr8x")
 
-[node name="house" type="Node2D" parent="House/house_area"]
+[node name="accident" type="Node2D" parent="Accident/Accident_area"]
 script = ExtResource("15_glpea")
 quest_name = "First Step"
-quest_desc = "Go to the abandoned house"
+quest_desc = "Go to the accident area"
 reached_goal_text = "nice"
+
+[node name="Forest" type="Node3D" parent="."]
+transform = Transform3D(5.6209, 0, 0, 0, 3.12141, 0, 0, 0, 16.5822, -7.20388, 2.47565, -10.94)
+
+[node name="Cabin_area" type="Area3D" parent="Forest" node_paths=PackedStringArray("quest")]
+script = ExtResource("17_ege66")
+quest = NodePath("cabin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/Cabin_area"]
+shape = SubResource("BoxShape3D_hn1pe")
+
+[node name="cabin" type="Node2D" parent="Forest/Cabin_area"]
+script = ExtResource("15_glpea")
+quest_name = "Explore the forest"
+quest_desc = "Find a Cabin inside the forest"
+reached_goal_text = "that's the cabin, you can see it from here"
+
+[node name="Cabin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.19355, 2.01252, -14.0633)
+
+[node name="Inside_cabin" type="Area3D" parent="Cabin" node_paths=PackedStringArray("quest")]
+script = ExtResource("18_gwi56")
+quest = NodePath("InCabin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabin/Inside_cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.743835, 0, -1.76587)
+shape = SubResource("BoxShape3D_vmipd")
+
+[node name="InCabin" type="Node2D" parent="Cabin/Inside_cabin"]
+script = ExtResource("15_glpea")
+quest_name = "Enter to the Cabin"
+quest_desc = "Go inside the Cabin to find a clue"
+reached_goal_text = "you've entered the Cabin."
+
+[node name="Clue" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1678, 1.9287, -3.5924)
+
+[node name="Clue_area" type="Area3D" parent="Clue" node_paths=PackedStringArray("quest")]
+script = SubResource("GDScript_31n2u")
+quest = NodePath("clue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clue/Clue_area"]
+transform = Transform3D(2.88, 0, 0, 0, 2.4, 0, 0, 0, 2.7, 0, 0, 0)
+shape = SubResource("BoxShape3D_gjn57")
+
+[node name="clue" type="Node2D" parent="Clue/Clue_area"]
+script = ExtResource("15_glpea")
+quest_name = "Find a clue "
+quest_desc = "Explore the Cabin and find a clue"
+reached_goal_text = "Goodbye bitch . . . . . "
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]
-[connection signal="body_entered" from="House/house_area" to="House/house_area" method="_on_body_entered"]
+[connection signal="body_entered" from="Accident/Accident_area" to="Accident/Accident_area" method="_on_body_entered"]
+[connection signal="body_entered" from="Forest/Cabin_area" to="Forest/Cabin_area" method="_on_body_entered"]
+[connection signal="body_entered" from="Cabin/Inside_cabin" to="Cabin/Inside_cabin" method="_on_body_entered"]
+[connection signal="body_entered" from="Clue/Clue_area" to="Clue/Clue_area" method="_on_body_entered"]

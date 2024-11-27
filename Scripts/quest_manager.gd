@@ -21,11 +21,20 @@ enum QuestStatus{
 @export var quest_status : QuestStatus = QuestStatus.available
 
 func _ready():
-	var quest1 = get_tree().root.get_node("Main Scene/House/house_area/house")
-	var quest2 = get_tree().root.get_node("Main Scene/Map/Puzzle")
+	var quest1 = get_tree().root.get_node("Main Scene/Accident/Accident_area/accident")
+	var quest2 = get_tree().root.get_node("Main Scene/Forest/Cabin_area/cabin")
+	var quest3 = get_tree().root.get_node("Main Scene/Cabin/Inside_cabin/InCabin")
+	var quest4 = get_tree().root.get_node("Main Scene/Clue/Clue_area/clue")
+	var quest5 = get_tree().root.get_node("Main Scene/Map/Puzzle")
+	var quest6 = get_tree().root.get_node("Main Scene/Main Character/InteractionArea/key")
 	quests.append(quest1)
 	quests.append(quest2)
-	await get_tree().create_timer(2.0).timeout
+	quests.append(quest3)
+	quests.append(quest4)
+	quests.append(quest5)
+	quests.append(quest6)
+	
+	await get_tree().create_timer(3.0).timeout
 	start_first_quest()
 
 func start_first_quest():
@@ -33,6 +42,6 @@ func start_first_quest():
 		quests[current_quest_index].start_quest()
 
 func next_quest():
-	if current_quest_index < quests.size() - 1:
-		current_quest_index += 1
-		quests[current_quest_index].start_quest()
+	current_quest_index += 1
+	print(current_quest_index)
+	quests[current_quest_index].start_quest()

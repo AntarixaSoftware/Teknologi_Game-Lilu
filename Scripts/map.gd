@@ -1,6 +1,7 @@
 extends Control
 
 @onready var map_control = $"."
+@export var quest: Quest
 var is_map_visible = false
 var has_puzzle = false
 
@@ -11,6 +12,11 @@ func _ready():
 
 func _on_puzzle_collected(new_value: bool):
 	has_puzzle = new_value
+	if quest.quest_status == quest.QuestStatus.started:
+		quest.reached_goal()
+		await get_tree().create_timer(3.0).timeout
+		if quest.quest_status == quest.QuestStatus.reached_goal:
+			quest.finished_quest()
 
 func _input(event):
 	if event.is_action_pressed("map"):
