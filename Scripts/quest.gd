@@ -1,4 +1,5 @@
 class_name Quest extends QuestManager
+@export var quest_sound: AudioStreamPlayer
 
 func start_quest() -> void:
 	if quest_status == QuestStatus.available:
@@ -6,7 +7,9 @@ func start_quest() -> void:
 		QuestBox.visible = true
 		QuestTitle.text = quest_name
 		QuestDescripton.text = quest_desc
-		
+		if quest_sound:
+			quest_sound.play()
+			
 func reached_goal() -> void:
 	if quest_status == QuestStatus.started:
 		quest_status = QuestStatus.reached_goal
