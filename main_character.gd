@@ -23,6 +23,8 @@ var flashlight_on = true
 @onready var flashlight = $Head/Camera3D/SpotLight3D
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var anim = $Head/Camera3D/AnimationPlayer
+
 
 var spawn_point = Vector3(0,2,0)
 
@@ -33,6 +35,7 @@ const STAMINA_RECHARGE = 15.0
 
 var MAX_HEALTH = 100.0
 var health = MAX_HEALTH
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -122,5 +125,9 @@ func take_damage(amount: float) -> void:
 	if player_state == PlayerState.ALIVE:
 		health -= amount
 		health = max(health, 0)
+	
+	if anim and anim.has_animation("Blood"):
+		anim.play("Blood")
+	
 		if health <= 0:
 			kill_player()
