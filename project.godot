@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 GameState="*res://Scripts/GameState.gd"
 GameManager="*res://Scenes/gamemanager.tscn"
+Questmanager="*res://Scripts/quest_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray()
 
 [filesystem]
 

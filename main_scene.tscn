@@ -393,6 +393,12 @@ libraries = {
 "": SubResource("AnimationLibrary_llk07")
 }
 
+[node name="Puzzle" type="Node2D" parent="Map"]
+script = ExtResource("15_glpea")
+quest_name = "Collect puzzle"
+quest_desc = "Find and Collect 4 pieces of puzzle around this house"
+reached_goal_text = "Congratulations! you can now accsess Map./n press M"
+
 [node name="House" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 3.98924, 0, 0, 0, 4.12035, -0.930943, 1.35865, 2.11955)
 
