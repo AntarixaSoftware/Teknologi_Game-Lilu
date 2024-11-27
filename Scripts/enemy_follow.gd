@@ -12,11 +12,11 @@ func Enter():
 	else:
 		print("Player found: ", player.name)
 
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	if player == null:
 		enemy.velocity = Vector3.ZERO
 		return
-	$"../../AnimationPlayer".play("Chase")
+	$"../../AnimationPlayer".play("Run")
 	var direction = (player.global_position - enemy.global_position)
 	var distance = direction.length()
 

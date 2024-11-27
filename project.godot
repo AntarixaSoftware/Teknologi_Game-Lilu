@@ -13,11 +13,10 @@ config_version=5
 config/name="Teknologi Game: Lilu"
 run/main_scene="res://Scenes/Intro/intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
