@@ -5,12 +5,15 @@ var interactable = true
 var message_shown : bool = false
 @onready var animation: AnimationPlayer = $"../../AnimationPlayer"
 @onready var door_message = $"../../DoorMessage"
+@onready var Item = $"../../../ItemUi"
 @export var player : CharacterBody3D
 
 func interact():
 	var area3d = player.get_node("InteractionArea")
 	
 	if area3d.has_key :
+		Item.key_icon.visible = false
+		Item.key_label.visible = false
 		if interactable == true:
 			interactable = false
 			toggle = !toggle

@@ -47,5 +47,4 @@ func start_first_quest():
 
 func next_quest():
 	current_quest_index += 1
-	print(current_quest_index)
 	quests[current_quest_index].start_quest()

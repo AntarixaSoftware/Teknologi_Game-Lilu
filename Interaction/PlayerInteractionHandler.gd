@@ -3,6 +3,8 @@ extends Area3D
 signal puzzle_collected(has_puzzle: bool)
 @export var ItemTypes : Array[ItemData] = []
 @export var quest : Quest
+@onready var Item = $"../../ItemUi"
+
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
 var has_puzzle : bool = false
@@ -32,6 +34,7 @@ func PickupNearestItem():
 				if ItemTypes[i].ItemName == "Key":
 					has_key = true
 					print("Kunci diambil!!!")
+					$"../../ItemUi".collect_key()
 					if quest.quest_status == quest.QuestStatus.started:
 						quest.reached_goal()
 						await get_tree().create_timer(3.0).timeout
@@ -47,6 +50,7 @@ func AddPuzzleItem(item_name : String):
 	if not collected_puzzle_items.has(item_name):
 		collected_puzzle_items.append(item_name)
 		print("Puzzle item diambil: " + item_name)
+		Item.collect_puzzle()
 		CheckPuzzleCompletion()
 
 func CheckPuzzleCompletion():
