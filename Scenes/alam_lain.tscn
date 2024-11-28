@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=4 uid="uid://cb3fk1w1x53t6"]
+[gd_scene load_steps=23 format=4 uid="uid://cb3fk1w1x53t6"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_j3rkm"]
+[ext_resource type="Script" path="res://Scripts/alam_lain.gd" id="1_th4lp"]
 [ext_resource type="Script" path="res://Scripts/ray_cast_3d.gd" id="2_bjbky"]
 [ext_resource type="Script" path="res://Scripts/door_alamlain.gd" id="3_6q8sh"]
 [ext_resource type="Script" path="res://Scripts/portal_back.gd" id="4_hx3gp"]
+[ext_resource type="AudioStream" uid="uid://rv2tbh2i2uva" path="res://Sound/AlamLain.mp3" id="6_mu8s6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8yrex"]
 
@@ -149,7 +151,9 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ekkv0"]
 
-[node name="Alam Lain" type="Node3D"]
+[node name="Alam Lain" type="Node3D" node_paths=PackedStringArray("musik")]
+script = ExtResource("1_th4lp")
+musik = NodePath("Alamlain")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -224,5 +228,8 @@ script = ExtResource("4_hx3gp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PortalBack"]
 shape = SubResource("BoxShape3D_ekkv0")
+
+[node name="Alamlain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mu8s6")
 
 [connection signal="body_entered" from="PortalBack" to="PortalBack" method="_on_body_entered"]

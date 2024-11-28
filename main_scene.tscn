@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=65 format=4 uid="uid://c2mg78tuaxa4f"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_riqai"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://drdtf7ku6o02o" path="res://Sound/door-locked.mp3" id="25_3sq2r"]
 [ext_resource type="AudioStream" uid="uid://b68x76pn71jan" path="res://Sound/dooropen.mp3" id="26_0ckk3"]
 [ext_resource type="AudioStream" uid="uid://bishe5a1umbt0" path="res://Sound/doorclose.mp3" id="27_uu0u0"]
+[ext_resource type="AudioStream" uid="uid://hsbqo8qse8l6" path="res://Sound/Portal.mp3" id="30_p22cm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -453,10 +454,11 @@ reached_goal_text = "you've entered the Cabin."
 [node name="Clue" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1678, 1.9287, -3.5924)
 
-[node name="Clue_area" type="Area3D" parent="Clue" node_paths=PackedStringArray("main_scene", "quest")]
+[node name="Clue_area" type="Area3D" parent="Clue" node_paths=PackedStringArray("main_scene", "quest", "portal")]
 script = ExtResource("19_mpo2c")
 main_scene = NodePath("../..")
 quest = NodePath("clue")
+portal = NodePath("../../Portal")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clue/Clue_area"]
 transform = Transform3D(2.88, 0, 0, 0, 2.4, 0, 0, 0, 2.7, 0, 0, 0)
@@ -525,6 +527,9 @@ stream = ExtResource("26_0ckk3")
 
 [node name="DoorClose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_uu0u0")
+
+[node name="Portal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_p22cm")
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]
