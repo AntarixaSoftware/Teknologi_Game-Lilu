@@ -495,7 +495,7 @@ script = ExtResource("15_glpea")
 quest_sound = NodePath("../../../Questsound")
 quest_name = "Road to Mansion"
 quest_desc = "Find a way to the Mansion."
-reached_goal_text = "The Mansion is in sight, what are you waiting for, go straight into the Mansion!"
+reached_goal_text = "The Mansion is in sight, go straight into the Mansion!"
 
 [node name="MansionEntrance" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2)
