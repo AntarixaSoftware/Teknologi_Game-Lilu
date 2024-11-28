@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=61 format=4 uid="uid://c2mg78tuaxa4f"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c8fewg57nkmb3" path="res://inventory/pz_3.tscn" id="9_xfisl"]
 [ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://inventory/pz_4.tscn" id="11_ewgqc"]
 [ext_resource type="Script" path="res://Scripts/map.gd" id="13_8tpk4"]
+[ext_resource type="AudioStream" uid="uid://csq635slhda4v" path="res://Sound/key-get.mp3" id="13_etvs8"]
 [ext_resource type="Texture2D" uid="uid://b33s5yghanau4" path="res://Assets/map.png" id="14_8nu4p"]
 [ext_resource type="Script" path="res://Scripts/quest.gd" id="15_glpea"]
 [ext_resource type="Script" path="res://Scripts/house.gd" id="15_pk0sp"]
@@ -21,6 +22,9 @@
 [ext_resource type="Script" path="res://Scripts/final.gd" id="20_f20bh"]
 [ext_resource type="Script" path="res://Scripts/enter.gd" id="21_iyhr1"]
 [ext_resource type="PackedScene" uid="uid://b1le6l3l661pi" path="res://Scenes/ItemUI.tscn" id="21_ue6v0"]
+[ext_resource type="AudioStream" uid="uid://ctp4oe7iy0umw" path="res://Assets/paper-collect.mp3" id="23_yhqti"]
+[ext_resource type="AudioStream" uid="uid://cnwloxb5qnkqv" path="res://Assets/paper_sound_-_1.mp3" id="24_5rtu5"]
+[ext_resource type="AudioStream" uid="uid://gt4xxiaxho8n" path="res://Assets/door-locked.mp3" id="25_lg0m8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -286,13 +290,15 @@ script = ExtResource("3_bt6ct")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
 
-[node name="InteractionArea" type="Area3D" parent="Main Character" node_paths=PackedStringArray("quest")]
+[node name="InteractionArea" type="Area3D" parent="Main Character" node_paths=PackedStringArray("quest", "key_sound", "puzzle_sound")]
 transform = Transform3D(0.717386, 0, 0, 0, 2.15134, 0, 0, 0, 1.7151, 0, 0, -0.514962)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_wqd2a")
 ItemTypes = Array[ExtResource("5_qqw06")]([SubResource("Resource_b6xwd"), SubResource("Resource_7831o"), SubResource("Resource_c24ba"), SubResource("Resource_xcfau"), SubResource("Resource_q6lcb"), SubResource("Resource_vg8rb")])
 quest = NodePath("key")
+key_sound = NodePath("../../KeySound")
+puzzle_sound = NodePath("../../Puzzlesound")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
 transform = Transform3D(2.91269, 0, 0, 0, 0.940191, 0, 0, 0, 1.03709, 0, 0, 0)
@@ -300,7 +306,7 @@ shape = SubResource("SphereShape3D_phgp4")
 
 [node name="key" type="Node2D" parent="Main Character/InteractionArea" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "Find a key"
 quest_desc = "Find a key arround the Cabin"
 reached_goal_text = "You've found the key! one step ahead!"
@@ -323,10 +329,11 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1, 1.90373, 0)
 [node name="Hinge" type="Node3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Door_model" type="StaticBody3D" parent="Door/Hinge" node_paths=PackedStringArray("player")]
+[node name="Door_model" type="StaticBody3D" parent="Door/Hinge" node_paths=PackedStringArray("player", "locked")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("4_kvt05")
 player = NodePath("../../../Main Character")
+locked = NodePath("../../../DoorLocked")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(0.0855008, 0, 0, 0, 0.033293, 0, 0, 0, 0.0419524, -0.6527, 0, -0.00355131)
@@ -366,13 +373,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79, 0.922397, -8.03046)
 
 [node name="Pz4" parent="." instance=ExtResource("11_ewgqc")]
 
-[node name="Map" type="Control" parent="." node_paths=PackedStringArray("quest")]
+[node name="Map" type="Control" parent="." node_paths=PackedStringArray("quest", "map_sound")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_8tpk4")
 quest = NodePath("Puzzle")
+map_sound = NodePath("../MapSound")
 
 [node name="PanelContainer" type="PanelContainer" parent="Map"]
 layout_mode = 0
@@ -393,7 +401,7 @@ libraries = {
 
 [node name="Puzzle" type="Node2D" parent="Map" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../AudioStreamPlayer")
+quest_sound = NodePath("../../Questsound")
 quest_name = "Collect puzzle"
 quest_desc = "Find and Collect 4 pieces of puzzle around this house"
 reached_goal_text = "Congratulations! you can now accsess Map! Press M to show Map. "
@@ -410,7 +418,7 @@ shape = SubResource("BoxShape3D_7yr8x")
 
 [node name="accident" type="Node2D" parent="Accident/Accident_area" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "First Step"
 quest_desc = "Go to the accident area"
 reached_goal_text = "nice"
@@ -427,7 +435,7 @@ shape = SubResource("BoxShape3D_hn1pe")
 
 [node name="cabin" type="Node2D" parent="Forest/Cabin_area" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "Explore the forest"
 quest_desc = "Find a Cabin inside the forest"
 reached_goal_text = "that's the cabin, you can see it from here"
@@ -445,7 +453,7 @@ shape = SubResource("BoxShape3D_vmipd")
 
 [node name="InCabin" type="Node2D" parent="Cabin/Inside_cabin" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "Enter to the Cabin"
 quest_desc = "Go inside the Cabin to find a clue"
 reached_goal_text = "you've entered the Cabin."
@@ -463,12 +471,12 @@ shape = SubResource("BoxShape3D_gjn57")
 
 [node name="clue" type="Node2D" parent="Clue/Clue_area" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "Find a clue "
 quest_desc = "Explore the Cabin and find a clue"
 reached_goal_text = "Goodbye bitch . . . . . "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Questsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_byqee")
 
 [node name="FinalPath" type="Node3D" parent="."]
@@ -483,7 +491,7 @@ shape = SubResource("BoxShape3D_4gpfc")
 
 [node name="final" type="Node2D" parent="FinalPath/Final" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "Road to Mansion"
 quest_desc = "Find a way to the Mansion."
 reached_goal_text = "Enter the Mansion"
@@ -501,11 +509,23 @@ shape = SubResource("BoxShape3D_oiacs")
 
 [node name="Mansion" type="Node2D" parent="MansionEntrance/Enter" node_paths=PackedStringArray("quest_sound")]
 script = ExtResource("15_glpea")
-quest_sound = NodePath("../../../AudioStreamPlayer")
+quest_sound = NodePath("../../../Questsound")
 quest_name = "Final Destination"
 quest_desc = "Enter the mansion to solve the mystery "
 
 [node name="ItemUi" parent="." instance=ExtResource("21_ue6v0")]
+
+[node name="KeySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_etvs8")
+
+[node name="Puzzlesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_yhqti")
+
+[node name="MapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_5rtu5")
+
+[node name="DoorLocked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_lg0m8")
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]

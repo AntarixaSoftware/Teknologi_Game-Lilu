@@ -4,6 +4,8 @@ signal puzzle_collected(has_puzzle: bool)
 @export var ItemTypes : Array[ItemData] = []
 @export var quest : Quest
 @onready var Item = $"../../ItemUi"
+@export var key_sound: AudioStreamPlayer
+@export var puzzle_sound: AudioStreamPlayer
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
@@ -33,8 +35,9 @@ func PickupNearestItem():
 				print("Item id:" + str(i) + " ItemName:" + ItemTypes[i].ItemName)
 				if ItemTypes[i].ItemName == "Key":
 					has_key = true
-					print("Kunci diambil!!!")
-					$"../../ItemUi".collect_key()
+					if key_sound:
+						key_sound.play()
+					Item.collect_key()
 					if quest.quest_status == quest.QuestStatus.started:
 						quest.reached_goal()
 						await get_tree().create_timer(3.0).timeout
@@ -50,6 +53,8 @@ func AddPuzzleItem(item_name : String):
 	if not collected_puzzle_items.has(item_name):
 		collected_puzzle_items.append(item_name)
 		print("Puzzle item diambil: " + item_name)
+		if puzzle_sound:
+			puzzle_sound.play()
 		Item.collect_puzzle()
 		CheckPuzzleCompletion()
 

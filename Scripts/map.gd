@@ -2,6 +2,7 @@ extends Control
 
 @onready var map_control = $"."
 @export var quest: Quest
+@export var map_sound: AudioStreamPlayer
 var is_map_visible = false
 var has_puzzle = false
 
@@ -26,5 +27,7 @@ func toggle_map():
 	if has_puzzle:
 		is_map_visible = !is_map_visible
 		map_control.visible = is_map_visible
+		if map_sound:
+			map_sound.play()
 	else :
-		print("cari puzzlenya blok")
+		print("complete the puzzle!")
