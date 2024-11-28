@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://k5g8rf2b5ie6"]
+[gd_scene load_steps=18 format=4 uid="uid://cb3fk1w1x53t6"]
 
 [ext_resource type="PackedScene" path="res://Scenes/main_character.tscn" id="3_clbdy"]
 [ext_resource type="Script" path="res://door_model.gd" id="3_yh4md"]
