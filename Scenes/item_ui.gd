@@ -4,6 +4,7 @@ extends Node2D
 @onready var key_label = $CanvasLayer/keylabel
 @onready var puzzle_icon = $CanvasLayer/Puzzle
 @onready var puzzle_label = $CanvasLayer/puzzlelabel
+@onready var puzzle_check = $AnimatedSprite2D
 
 var key_count: int = 0 
 var max_puzzle = 4
@@ -18,7 +19,10 @@ func update_ui():
 			puzzle_icon.visible = true
 			puzzle_label.visible = true
 			puzzle_label.text = str(collected_puzzles) + "/" + str(max_puzzle)
+			puzzle_check.visible = true
+			puzzle_check.play("Check")
 			await get_tree().create_timer(2.0).timeout
+			puzzle_check.visible = false
 			puzzle_icon.visible = false
 			puzzle_label.visible = false
 		else:
@@ -30,6 +34,7 @@ func update_ui():
 		key_label.visible = false
 		puzzle_icon.visible = false
 		puzzle_label.visible = false
+		puzzle_check.visible = false
 
 func collect_key():
 	key_count += 1
