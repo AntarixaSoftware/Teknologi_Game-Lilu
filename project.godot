@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameState="*res://Scripts/GameState.gd"
 GameManager="*res://Scenes/gamemanager.tscn"
 Questmanager="*res://Scripts/quest_manager.gd"
+QuestGlobal="*res://Scripts/questglobal.gd"
 
 [editor_plugins]
 

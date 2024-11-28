@@ -1,6 +1,7 @@
-[gd_scene load_steps=63 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=64 format=4 uid="uid://c2mg78tuaxa4f"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_ahtcp"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_riqai"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
 [ext_resource type="Script" path="res://Scripts/ray_cast_3d.gd" id="3_bt6ct"]
 [ext_resource type="Script" path="res://Scripts/door_model.gd" id="4_kvt05"]
@@ -19,6 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/cabin_area.gd" id="17_ege66"]
 [ext_resource type="Script" path="res://Scripts/inside_cabin.gd" id="18_gwi56"]
 [ext_resource type="AudioStream" uid="uid://dgvymhmv3ljr7" path="res://Sound/knife-sharpening-48738 (mp3cut.net).mp3" id="19_byqee"]
+[ext_resource type="Script" path="res://Scripts/portal.gd" id="19_mpo2c"]
 [ext_resource type="Script" path="res://Scripts/final.gd" id="20_f20bh"]
 [ext_resource type="Script" path="res://Scripts/enter.gd" id="21_iyhr1"]
 [ext_resource type="PackedScene" uid="uid://b1le6l3l661pi" path="res://Scenes/ItemUI.tscn" id="21_ue6v0"]
@@ -235,21 +237,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_vmipd"]
 size = Vector3(4.76697, 1, 4.53174)
 
-[sub_resource type="GDScript" id="GDScript_31n2u"]
-script/source = "extends Area3D
-
-@export var quest : Quest
-
-func _on_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
-		if body.name == \"Main Character\":
-			if quest.quest_status == quest.QuestStatus.started:
-				quest.reached_goal()
-				await get_tree().create_timer(2.0).timeout
-				if quest.quest_status == quest.QuestStatus.reached_goal:
-					quest.finished_quest()
-"
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_gjn57"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4gpfc"]
@@ -257,6 +244,7 @@ func _on_body_entered(body: Node3D) -> void:
 [sub_resource type="BoxShape3D" id="BoxShape3D_oiacs"]
 
 [node name="Main Scene" type="Node3D"]
+script = ExtResource("1_riqai")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y6w44")
@@ -465,8 +453,9 @@ reached_goal_text = "you've entered the Cabin."
 [node name="Clue" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1678, 1.9287, -3.5924)
 
-[node name="Clue_area" type="Area3D" parent="Clue" node_paths=PackedStringArray("quest")]
-script = SubResource("GDScript_31n2u")
+[node name="Clue_area" type="Area3D" parent="Clue" node_paths=PackedStringArray("main_scene", "quest")]
+script = ExtResource("19_mpo2c")
+main_scene = NodePath("../..")
 quest = NodePath("clue")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clue/Clue_area"]

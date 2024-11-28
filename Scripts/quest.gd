@@ -20,3 +20,8 @@ func finished_quest() -> void:
 		quest_status = QuestStatus.finished
 		QuestBox.visible = false
 		Questmanager.next_quest()
+
+func Stop() -> void:
+	if quest_status == QuestStatus.reached_goal:
+		quest_status = QuestStatus.finished
+		QuestBox.visible = false

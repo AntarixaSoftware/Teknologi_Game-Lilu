@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://632k6fil53yx"]
+[gd_scene load_steps=21 format=4 uid="uid://cb3fk1w1x53t6"]
 
-[ext_resource type="Script" path="res://main_character.gd" id="1_ltict"]
-[ext_resource type="Script" path="res://ray_cast_3d.gd" id="2_khtb0"]
-[ext_resource type="Script" path="res://door_model.gd" id="3_yh4md"]
-[ext_resource type="Script" path="res://Scenes/portal_back.gd" id="4_72p10"]
+[ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_j3rkm"]
+[ext_resource type="Script" path="res://Scripts/ray_cast_3d.gd" id="2_bjbky"]
+[ext_resource type="Script" path="res://Scripts/door_alamlain.gd" id="3_6q8sh"]
+[ext_resource type="Script" path="res://Scripts/portal_back.gd" id="4_hx3gp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8yrex"]
 
@@ -170,7 +170,7 @@ shape = SubResource("BoxShape3D_a6hsd")
 
 [node name="Main Character" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16082, 1.57613, 0)
-script = ExtResource("1_ltict")
+script = ExtResource("1_j3rkm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Main Character"]
 mesh = SubResource("CapsuleMesh_6hp6y")
@@ -185,7 +185,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Main Character/Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.48488e-08, 0, -0.480488)
-script = ExtResource("2_khtb0")
+script = ExtResource("2_bjbky")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
 
@@ -197,7 +197,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="Door_model" type="StaticBody3D" parent="Door/Hinge"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-script = ExtResource("3_yh4md")
+script = ExtResource("3_6q8sh")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(0.0855008, 0, 0, 0, 0.033293, 0, 0, 0, 0.0419524, -0.6527, 0, -0.00355131)
@@ -218,11 +218,11 @@ libraries = {
 "": SubResource("AnimationLibrary_mqdmn")
 }
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="PortalBack" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.91771, 0, 0, 0, 1.8097, -4.78939, 1.97339, -5.17062)
-script = ExtResource("4_72p10")
+script = ExtResource("4_hx3gp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalBack"]
 shape = SubResource("BoxShape3D_ekkv0")
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="PortalBack" to="PortalBack" method="_on_body_entered"]
