@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=63 format=4 uid="uid://c2mg78tuaxa4f"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://inventory/pz_4.tscn" id="11_ewgqc"]
 [ext_resource type="Script" path="res://Scripts/map.gd" id="13_8tpk4"]
 [ext_resource type="AudioStream" uid="uid://csq635slhda4v" path="res://Sound/key-get.mp3" id="13_etvs8"]
-[ext_resource type="Texture2D" uid="uid://b33s5yghanau4" path="res://Assets/map.png" id="14_8nu4p"]
+[ext_resource type="Texture2D" uid="uid://c8hmdojyo5e4n" path="res://Assets/map.png" id="14_8nu4p"]
 [ext_resource type="Script" path="res://Scripts/quest.gd" id="15_glpea"]
 [ext_resource type="Script" path="res://Scripts/house.gd" id="15_pk0sp"]
 [ext_resource type="Script" path="res://Scripts/cabin_area.gd" id="17_ege66"]
@@ -22,9 +22,11 @@
 [ext_resource type="Script" path="res://Scripts/final.gd" id="20_f20bh"]
 [ext_resource type="Script" path="res://Scripts/enter.gd" id="21_iyhr1"]
 [ext_resource type="PackedScene" uid="uid://b1le6l3l661pi" path="res://Scenes/ItemUI.tscn" id="21_ue6v0"]
-[ext_resource type="AudioStream" uid="uid://ctp4oe7iy0umw" path="res://Assets/paper-collect.mp3" id="23_yhqti"]
-[ext_resource type="AudioStream" uid="uid://cnwloxb5qnkqv" path="res://Assets/paper_sound_-_1.mp3" id="24_5rtu5"]
-[ext_resource type="AudioStream" uid="uid://gt4xxiaxho8n" path="res://Assets/door-locked.mp3" id="25_lg0m8"]
+[ext_resource type="AudioStream" uid="uid://deh8ufvisrl36" path="res://Sound/paper-collect.mp3" id="23_ya50l"]
+[ext_resource type="AudioStream" uid="uid://c2ud40fpxi8n3" path="res://Sound/paper_sound_-_1.mp3" id="24_l27fd"]
+[ext_resource type="AudioStream" uid="uid://drdtf7ku6o02o" path="res://Sound/door-locked.mp3" id="25_3sq2r"]
+[ext_resource type="AudioStream" uid="uid://b68x76pn71jan" path="res://Sound/dooropen.mp3" id="26_0ckk3"]
+[ext_resource type="AudioStream" uid="uid://bishe5a1umbt0" path="res://Sound/doorclose.mp3" id="27_uu0u0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -329,11 +331,13 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1, 1.90373, 0)
 [node name="Hinge" type="Node3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Door_model" type="StaticBody3D" parent="Door/Hinge" node_paths=PackedStringArray("player", "locked")]
+[node name="Door_model" type="StaticBody3D" parent="Door/Hinge" node_paths=PackedStringArray("player", "locked", "open", "close")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("4_kvt05")
 player = NodePath("../../../Main Character")
 locked = NodePath("../../../DoorLocked")
+open = NodePath("../../../DoorOpen")
+close = NodePath("../../../DoorClose")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Door/Hinge/Door_model"]
 transform = Transform3D(0.0855008, 0, 0, 0, 0.033293, 0, 0, 0, 0.0419524, -0.6527, 0, -0.00355131)
@@ -476,9 +480,6 @@ quest_name = "Find a clue "
 quest_desc = "Explore the Cabin and find a clue"
 reached_goal_text = "Goodbye bitch . . . . . "
 
-[node name="Questsound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_byqee")
-
 [node name="FinalPath" type="Node3D" parent="."]
 transform = Transform3D(2.1, 0, 0, 0, 1.8, 0, 0, 0, 2, -1, 2, 3)
 
@@ -515,17 +516,26 @@ quest_desc = "Enter the mansion to solve the mystery "
 
 [node name="ItemUi" parent="." instance=ExtResource("21_ue6v0")]
 
+[node name="Questsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_byqee")
+
 [node name="KeySound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_etvs8")
 
 [node name="Puzzlesound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_yhqti")
+stream = ExtResource("23_ya50l")
 
 [node name="MapSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_5rtu5")
+stream = ExtResource("24_l27fd")
 
 [node name="DoorLocked" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("25_lg0m8")
+stream = ExtResource("25_3sq2r")
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_0ckk3")
+
+[node name="DoorClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_uu0u0")
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]

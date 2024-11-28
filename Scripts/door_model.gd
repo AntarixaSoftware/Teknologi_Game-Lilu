@@ -8,6 +8,8 @@ var message_shown : bool = false
 @onready var Item = $"../../../ItemUi"
 @export var player : CharacterBody3D
 @export var locked : AudioStreamPlayer
+@export var open : AudioStreamPlayer
+@export var close : AudioStreamPlayer
 
 func interact():
 	var area3d = player.get_node("InteractionArea")
@@ -20,8 +22,12 @@ func interact():
 			
 			if toggle == false:
 				animation.play("Close")
+				if close:
+					close.play()
 			if toggle == true:
 				animation.play("Open")
+				if open:
+					open.play()
 				if not message_shown :
 					show_door_message("Door Unlocked!", Color(0, 1, 0))
 					message_shown = true

@@ -38,7 +38,7 @@ func _ready():
 	quests.append(quest7)
 	quests.append(quest8)
 	
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	start_first_quest()
 
 func start_first_quest():
