@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:basic_inventory/icon.svg.import
 uid="uid://d35k70vm0jbar"
 path="res://.godot/imported/icon.svg-caa22d826c9043f8d2d19cdf3f9755d8.ctex"
+========
+uid="uid://bb4vjcbahiujw"
+path="res://.godot/imported/coast_sand_01_diff_1k.jpg-31d985ce28f46755b2d841bf90bb34c4.ctex"
+>>>>>>>> Main-Branch:Main_Branch/Terrain/Coast Sand/coast_sand_01_diff_1k.jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:basic_inventory/icon.svg.import
 source_file="res://basic_inventory/icon.svg"
 dest_files=["res://.godot/imported/icon.svg-caa22d826c9043f8d2d19cdf3f9755d8.ctex"]
+========
+source_file="res://Main_Branch/Terrain/Coast Sand/coast_sand_01_diff_1k.jpg"
+dest_files=["res://.godot/imported/coast_sand_01_diff_1k.jpg-31d985ce28f46755b2d841bf90bb34c4.ctex"]
+>>>>>>>> Main-Branch:Main_Branch/Terrain/Coast Sand/coast_sand_01_diff_1k.jpg.import
 
 [params]
 
@@ -32,6 +42,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

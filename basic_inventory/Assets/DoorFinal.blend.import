@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cmkt4x0rksi8t"
-path="res://.godot/imported/DoorFinal.blend-b881f885c342879149cf2735c8a2dffe.scn"
+uid="uid://bwlx34ardalw8"
+path="res://.godot/imported/Truck Done.blend-9673c3471a2b28cad366a34a80a72fb0.scn"
 
 [deps]
 
-source_file="res://Assets/DoorFinal.blend"
-dest_files=["res://.godot/imported/DoorFinal.blend-b881f885c342879149cf2735c8a2dffe.scn"]
+source_file="res://Main_Branch/Scenes/Truck Done.blend"
+dest_files=["res://.godot/imported/Truck Done.blend-9673c3471a2b28cad366a34a80a72fb0.scn"]
 
 [params]
 

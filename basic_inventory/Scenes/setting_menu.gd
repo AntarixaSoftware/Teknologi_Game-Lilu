@@ -1,7 +1,7 @@
 class_name SettingMenu
 extends Control
 
-@onready var exit_button = $MarginContainer/VBoxContainer/Button as Button
+@onready var exit_button: Button = $MarginContainer/VBoxContainer/Exit_Button as Button
 
 signal exit_setting_menu
 
