@@ -9,7 +9,6 @@ class_name QuestManager extends Node2D
 @export var quest_desc : String
 @export var reached_goal_text : String
 
-
 enum QuestStatus{
 	available,
 	started,
@@ -21,6 +20,7 @@ enum QuestStatus{
 func _ready():
 	QuestGlobal.connect("main_scene_loaded", Callable(self, "_on_main_scene_loaded"))
 	if GameState.entered:
+		print("kntl")
 		init()
 
 func _on_main_scene_loaded():
