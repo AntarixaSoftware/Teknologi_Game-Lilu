@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://d4lmn7e6dgjss"]
+[gd_scene load_steps=7 format=4 uid="uid://d4lmn7e6dgjss"]
 
 [ext_resource type="Script" path="res://basic_inventory/inventory/InteractableItem.gd" id="1_lehsa"]
 [ext_resource type="ArrayMesh" uid="uid://dbrbj273uh3fa" path="res://basic_inventory/Assets/21929_Key_v1.obj" id="2_ss8oh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hcnd"]
+albedo_color = Color(0.704277, 0.60631, 0.134537, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jkuvu"]
 _surfaces = [{
@@ -33,6 +36,7 @@ ItemHighlightMesh = NodePath("MeshInstance3D/Outline")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.205029, 0, 0, 0, 0.205029, 0, 0, 0, 0.205029, 0, 0, 0)
 mesh = ExtResource("2_ss8oh")
+surface_material_override/0 = SubResource("StandardMaterial3D_7hcnd")
 
 [node name="Outline" type="MeshInstance3D" parent="MeshInstance3D"]
 visible = false

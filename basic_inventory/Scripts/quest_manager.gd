@@ -19,14 +19,14 @@ enum QuestStatus{
 @export var quest_status : QuestStatus = QuestStatus.available
 
 func _ready():
-		var quest1 = get_tree().root.get_node("Main Scene/Accident/Accident_area/accident")
-		var quest2 = get_tree().root.get_node("Main Scene/Forest/Cabin_area/cabin")
-		var quest3 = get_tree().root.get_node("Main Scene/Cabin/Inside_cabin/InCabin")
-		var quest4 = get_tree().root.get_node("Main Scene/Clue/Clue_area/clue")
+		var quest1 = get_tree().root.get_node("Main Scene/Quests/Accident/Accident_area/accident")
+		var quest2 = get_tree().root.get_node("Main Scene/Quests/Forest/Cabin_area/cabin")
+		var quest3 = get_tree().root.get_node("Main Scene/Quests/Cabin/Inside_cabin/InCabin")
+		var quest4 = get_tree().root.get_node("Main Scene/Quests/Clue/Clue_area/clue")
 		var quest5 = get_tree().root.get_node("Main Scene/Main Character/InteractionArea/key")
 		var quest6 = get_tree().root.get_node("Main Scene/Map/Puzzle")
-		var quest7 = get_tree().root.get_node("Main Scene/FinalPath/Final/final")
-		var quest8 = get_tree().root.get_node("Main Scene/MansionEntrance/Enter/Mansion")
+		var quest7 = get_tree().root.get_node("Main Scene/Quests/FinalPath/Final/final")
+		var quest8 = get_tree().root.get_node("Main Scene/Quests/MansionEntrance/Enter/Mansion")
 		QuestGlobal.quests.clear()
 		QuestGlobal.quests.append(quest1)
 		QuestGlobal.quests.append(quest2)

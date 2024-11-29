@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var main_scene_path : String = "res://main_scene.tscn"
+@export var main_scene_path : String = "res://basic_inventory/main_scene.tscn"
 
 func _on_body_entered(body):
 	if body.name == "Main Character":
