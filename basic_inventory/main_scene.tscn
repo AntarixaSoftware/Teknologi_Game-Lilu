@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=65 format=4 uid="uid://c2mg78tuaxa4f"]
 
 [ext_resource type="Script" path="res://basic_inventory/Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Script" path="res://basic_inventory/Scripts/main.gd" id="1_riqai"]
@@ -30,7 +30,6 @@
 [ext_resource type="AudioStream" uid="uid://b68x76pn71jan" path="res://basic_inventory/Sound/dooropen.mp3" id="26_0ckk3"]
 [ext_resource type="AudioStream" uid="uid://bishe5a1umbt0" path="res://basic_inventory/Sound/doorclose.mp3" id="27_uu0u0"]
 [ext_resource type="AudioStream" uid="uid://hsbqo8qse8l6" path="res://basic_inventory/Sound/Portal.mp3" id="30_p22cm"]
-[ext_resource type="PackedScene" uid="uid://u7k25hmfku7s" path="res://basic_inventory/Assets/Map.glb" id="31_03hd1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -532,8 +531,6 @@ stream = ExtResource("27_uu0u0")
 
 [node name="Portal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_p22cm")
-
-[node name="Map2" parent="." instance=ExtResource("31_03hd1")]
 
 [connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
 [connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]
