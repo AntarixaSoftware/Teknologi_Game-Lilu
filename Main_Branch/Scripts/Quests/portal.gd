@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var alam_lain_path : String = "res://basic_inventory/Scenes/alam_lain.tscn"
+@export var alam_lain_path : String = "res://Main_Branch/Scenes/alam_lain.tscn"
 @export var main_scene : Node
 @export var quest : Quest
 @export var portal : AudioStreamPlayer

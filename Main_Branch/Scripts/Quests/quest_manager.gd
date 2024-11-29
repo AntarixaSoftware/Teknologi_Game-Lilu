@@ -20,9 +20,10 @@ enum QuestStatus{
 
 func _ready():
 	QuestGlobal.connect("main_scene_loaded", Callable(self, "_on_main_scene_loaded"))
+	if GameState.entered:
+		init()
 
 func _on_main_scene_loaded():
-	print("kntl")
 	await get_tree().create_timer(1.0).timeout
 	init()
 
