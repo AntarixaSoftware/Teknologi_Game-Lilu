@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgvymhmv3ljr7"
+path="res://.godot/imported/knife-sharpening-48738 (mp3cut.net).mp3-47cb4b1ed7732f6534a3c18041d42b30.mp3str"
+
+[deps]
+
+source_file="res://basic_inventory/Sound/knife-sharpening-48738 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/knife-sharpening-48738 (mp3cut.net).mp3-47cb4b1ed7732f6534a3c18041d42b30.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
