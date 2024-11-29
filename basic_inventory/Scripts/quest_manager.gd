@@ -27,6 +27,11 @@ func _ready():
 		var quest6 = get_tree().root.get_node("Main Scene/Map/Puzzle")
 		var quest7 = get_tree().root.get_node("Main Scene/Quests/FinalPath/Final/final")
 		var quest8 = get_tree().root.get_node("Main Scene/Quests/MansionEntrance/Enter/Mansion")
+		var key_node = get_tree().root.get_node("Main Scene/Items/Key")
+		var puzzle_node = get_tree().root.get_node("Main Scene/Items/Puzzles")
+		QuestGlobal.Items.clear()
+		QuestGlobal.Items.append(key_node)
+		QuestGlobal.Items.append(puzzle_node)
 		QuestGlobal.quests.clear()
 		QuestGlobal.quests.append(quest1)
 		QuestGlobal.quests.append(quest2)
@@ -44,8 +49,11 @@ func start_first_quest():
 		if GameState.entered:
 			if QuestGlobal.current_index == 3:
 				QuestGlobal.current_index += 1
+				QuestGlobal.Items[0].visible = true
 		QuestGlobal.quests[QuestGlobal.current_index].start_quest()
 
 func next_quest():
 	QuestGlobal.current_index += 1
+	if QuestGlobal.current_index == 5:
+		QuestGlobal.Items[1].visible = true
 	QuestGlobal.quests[QuestGlobal.current_index].start_quest()

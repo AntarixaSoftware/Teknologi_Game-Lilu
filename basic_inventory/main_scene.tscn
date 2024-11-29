@@ -357,17 +357,21 @@ theme_override_font_sizes/font_size = 15
 
 [node name="Key" parent="Items" instance=ExtResource("6_has45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905871, 1.70101, -2.55345)
+visible = false
 mass = 0.2
 
-[node name="Pz1" parent="Items" instance=ExtResource("8_fxkyg")]
+[node name="Puzzles" type="Node3D" parent="Items"]
+visible = false
 
-[node name="Pz2" parent="Items" instance=ExtResource("8_qjcd3")]
+[node name="Pz1" parent="Items/Puzzles" instance=ExtResource("8_fxkyg")]
+
+[node name="Pz2" parent="Items/Puzzles" instance=ExtResource("8_qjcd3")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.0422, 1.48175, -3.23504)
 
-[node name="Pz3" parent="Items" instance=ExtResource("9_xfisl")]
+[node name="Pz3" parent="Items/Puzzles" instance=ExtResource("9_xfisl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79, 0.922397, -8.03046)
 
-[node name="Pz4" parent="Items" instance=ExtResource("11_ewgqc")]
+[node name="Pz4" parent="Items/Puzzles" instance=ExtResource("11_ewgqc")]
 
 [node name="Quests" type="Node3D" parent="."]
 
