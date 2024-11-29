@@ -1,8 +1,8 @@
-[gd_scene load_steps=65 format=4 uid="uid://c2mg78tuaxa4f"]
+[gd_scene load_steps=65 format=4 uid="uid://coc4jc3n4yelm"]
 
 [ext_resource type="Script" path="res://basic_inventory/Scripts/main_character.gd" id="1_ahtcp"]
 [ext_resource type="Script" path="res://basic_inventory/Scripts/main.gd" id="1_riqai"]
-[ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://basic_inventory/Assets/crosshair.png" id="1_yweky"]
+[ext_resource type="Texture2D" uid="uid://cu016fwmgni1s" path="res://basic_inventory/Assets/crosshair.png" id="1_yweky"]
 [ext_resource type="Script" path="res://basic_inventory/Scripts/ray_cast_3d.gd" id="3_bt6ct"]
 [ext_resource type="Script" path="res://basic_inventory/Scripts/door_model.gd" id="4_kvt05"]
 [ext_resource type="Script" path="res://basic_inventory/Interaction/PlayerInteractionHandler.gd" id="4_wqd2a"]
