@@ -1,5 +1,6 @@
 class_name MainMenu
 extends Control
+signal main_scene_loaded
 
 @onready var start_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
 @onready var setting_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Setting_Button as Button
@@ -13,12 +14,13 @@ func _ready():
 
 func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
+	emit_signal("main_scene_loaded")
 
 func on_setting_pressed() -> void:
 	margin_container.visible = false
 	setting_menu.set_process(true)
 	setting_menu.visible = true
-"res://Main_Branch/Scenes/main_scene.tscn"
+
 func on_quit_pressed() -> void:
 	get_tree().quit()
 

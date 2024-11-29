@@ -17,10 +17,11 @@ config/icon="res://basic_inventory/icon.svg"
 
 [autoload]
 
-GameState="*res://basic_inventory/Scripts/GameState.gd"
-GameManager="*res://basic_inventory/Scenes/gamemanager.tscn"
-Questmanager="*res://basic_inventory/Scripts/quest_manager.gd"
-QuestGlobal="*res://basic_inventory/Scripts/questglobal.gd"
+GameState="*res://Main_Branch/Scripts/Quests/GameState.gd"
+GameManager="*res://Main_Branch/Scenes/gamemanager.tscn"
+Questmanager="*res://Main_Branch/Scripts/Quests/quest_manager.gd"
+QuestGlobal="*res://Main_Branch/Scripts/Quests/questglobal.gd"
+Intro="*res://Main_Branch/Scenes/Intro/intro.tscn"
 
 [editor_plugins]
 
