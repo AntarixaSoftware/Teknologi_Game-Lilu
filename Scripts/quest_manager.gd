@@ -44,7 +44,6 @@ func start_first_quest():
 		if GameState.entered:
 			if QuestGlobal.current_index == 3:
 				QuestGlobal.current_index += 1
-				print("kntl")
 		QuestGlobal.quests[QuestGlobal.current_index].start_quest()
 
 func next_quest():
