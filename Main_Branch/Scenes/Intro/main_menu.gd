@@ -14,7 +14,7 @@ func _ready():
 
 func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
-	emit_signal("main_scene_loaded")
+	QuestGlobal.emit_signal("main_scene_loaded")
 
 func on_setting_pressed() -> void:
 	margin_container.visible = false

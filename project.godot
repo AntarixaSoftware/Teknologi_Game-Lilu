@@ -21,7 +21,6 @@ GameState="*res://Main_Branch/Scripts/Quests/GameState.gd"
 GameManager="*res://Main_Branch/Scenes/gamemanager.tscn"
 Questmanager="*res://Main_Branch/Scripts/Quests/quest_manager.gd"
 QuestGlobal="*res://Main_Branch/Scripts/Quests/questglobal.gd"
-Intro="*res://Main_Branch/Scenes/Intro/intro.tscn"
 
 [editor_plugins]
 
