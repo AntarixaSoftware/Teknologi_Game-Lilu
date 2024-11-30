@@ -55,6 +55,11 @@ func start_first_quest():
 		if GameState.entered:
 			if QuestGlobal.current_index == 4:
 				QuestGlobal.current_index += 1
+		else:
+			if QuestGlobal.current_index == 0:
+				var firstway = get_tree().root.get_node("Main Scene/Story/Quests/Accident/waypoint")
+				await get_tree().create_timer(1.0).timeout
+				firstway.spawn()
 		QuestGlobal.quests[QuestGlobal.current_index].start_quest()
 
 func next_quest():

@@ -3,6 +3,7 @@ extends Control
 @onready var map_control = $"."
 @export var quest: Quest
 @export var map_sound: AudioStreamPlayer
+@export var wayafter : Node3D
 var is_map_visible = false
 var has_puzzle = false
 
@@ -18,6 +19,7 @@ func _on_puzzle_collected(new_value: bool):
 		await get_tree().create_timer(3.0).timeout
 		if quest.quest_status == quest.QuestStatus.reached_goal:
 			quest.finished_quest()
+			wayafter.spawn()
 
 func _input(event):
 	if event.is_action_pressed("map"):

@@ -1,10 +1,15 @@
 extends Area3D
 
 @export var quest : Quest
+@export var waybefore: Node3D
+@onready var entered : bool = false
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		if body.name == "Main Character":
+			if not entered:
+				waybefore.erase()
+				entered = true
 			if quest.quest_status == quest.QuestStatus.started:
 				quest.reached_goal()
 				await get_tree().create_timer(2.0).timeout
