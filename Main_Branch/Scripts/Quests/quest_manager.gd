@@ -45,7 +45,7 @@ func init():
 	QuestGlobal.quests.append(quest6)
 	QuestGlobal.quests.append(quest7)
 	QuestGlobal.quests.append(quest8)
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(6.0).timeout
 	start_first_quest()
 
 func start_first_quest():

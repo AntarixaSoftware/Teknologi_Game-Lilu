@@ -1,6 +1,7 @@
 extends Node3D  # atau tipe node root lainnya
 
 func _ready():
+	_animation()
 	var saved_state = GameState.load_state()
 	if saved_state.has("player_position"):
 		var last_position = saved_state["player_position"]
@@ -14,4 +15,6 @@ func _ready():
 			print("Player position updated to:", last_position)
 		else:
 			print("Error: Player node tidak ditemukan di main scene.")
-	
+
+func _animation():
+	$Truck/AnimationPlayer.play("TruckCrash")
