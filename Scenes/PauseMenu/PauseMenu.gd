@@ -9,6 +9,7 @@ extends ColorRect
 func _ready() -> void:
 	resume_button.pressed.connect(unpause)
 	main_menu_button.pressed.connect(to_intro)
+	restart_button.pressed.connect(restart_game)
 
 func unpause():
 	animator.play("Unpause")
@@ -19,6 +20,13 @@ func pause():
 	animator.play("Pause")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func restart_game():
+	print("Restarting the current scene...")
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().reload_current_scene()
+	print("Scene restarted successfully.")
 
 func to_intro():
 	print("Switching to intro scene...")
