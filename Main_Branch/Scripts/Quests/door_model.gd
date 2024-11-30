@@ -5,7 +5,7 @@ var interactable = true
 var message_shown : bool = false
 @onready var animation: AnimationPlayer = $"../../AnimationPlayer"
 @onready var door_message = $"../../DoorMessage"
-@onready var Item = $"../../../../Main Character/ItemUi"
+@onready var Item = $"../../../../../Main Character/ItemUi"
 @export var player : CharacterBody3D
 @export var locked : AudioStreamPlayer
 @export var open : AudioStreamPlayer
