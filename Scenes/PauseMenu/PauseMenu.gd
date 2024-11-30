@@ -3,6 +3,8 @@ extends ColorRect
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var resume_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton
 @onready var main_menu_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenuButton
+@onready var restart_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton
+
 
 func _ready() -> void:
 	resume_button.pressed.connect(unpause)
