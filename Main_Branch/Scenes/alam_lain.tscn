@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cb3fk1w1x53t6"]
+[gd_scene load_steps=23 format=4 uid="uid://d3i3jc5mupf15"]
 
 [ext_resource type="Script" path="res://Main_Branch/Scripts/Quests/alam_lain.gd" id="1_bdnbu"]
 [ext_resource type="Script" path="res://Main_Branch/Scripts/Quests/door_alamlain.gd" id="2_v40aa"]
