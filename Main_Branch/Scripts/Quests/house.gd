@@ -17,7 +17,7 @@ func _on_body_entered(body: Node3D) -> void:
 			if quest_dialog.quest_status == quest_dialog.QuestStatus.started:
 				emit_signal("display")
 				quest_dialog.reached_goal()
-				await get_tree().create_timer(3.0).timeout
+				await get_tree().create_timer(8.0).timeout
 				if quest_dialog.quest_status == quest_dialog.QuestStatus.reached_goal:
 					quest_dialog.finished_quest()
 					dialog.visible = false
