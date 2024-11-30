@@ -5,8 +5,8 @@ extends Node3D
 
 # Variabel daftar dialog
 var dialog_queue: Array = [
-	{"name": "Charles", "dialog": "Halo guys"},
-	{"name": "Charles", "dialog": "Saya adalah Charles"}
+	{"name": "Charles", "dialog": "Ucok, ini tempatnya. Di sini aku kecelakaan waktu itu... Aduh, kenapa aku bisa begini ya? Kalau saja aku tidak lewat jalan ini, rohku mungkin sudah damai."},
+	{"name": "Charles", "dialog": "Dengar, aku sudah mencoba keluar dari sini, tapi rasanya seperti ada yang menahanku. Kamu dengar apa-apa di sini? Tidak? Hah, syukurlah, aku saja sudah ngeri."}
 ]
 
 var current_name: String = ""
@@ -14,7 +14,7 @@ var current_dialog: String = ""
 var display_text: String = ""  # Teks yang muncul satu per satu
 var char_index: int = 0  # Indeks untuk huruf
 var dialog_index: int = 0  # Indeks untuk antrean dialog
-var char_interval: float = 0.2
+var char_interval: float = 0.05
 
 func _ready():
 	var start = get_node("/root/Main Scene/Story/Quests/Accident/Accident_area")

@@ -1,15 +1,23 @@
 extends Area3D
 
+signal display4
 signal puzzle_collected(has_puzzle: bool)
 @export var ItemTypes : Array[ItemData] = []
 @export var quest : Quest
+@export var quest2 : Quest
+@export var quest3 : Quest
 @onready var Item = $"../ItemUi"
 @export var key_sound: AudioStreamPlayer
 @export var puzzle_sound: AudioStreamPlayer
+@export var wayafter : Node3D
+@export var wayafter2 : Node3D
+@export var quest_dialog: Quest
+@export var dialog: RichTextLabel
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
 var has_puzzle : bool = false
+
 
 const REQUIRED_PUZZLE_ITEMS = ["Pz1", "Pz2", "Pz3", "Pz4"]
 var collected_puzzle_items : Array[String] = []
@@ -45,6 +53,27 @@ func PickupNearestItem():
 							quest.finished_quest()
 				elif REQUIRED_PUZZLE_ITEMS.has(ItemTypes[i].ItemName):
 					AddPuzzleItem(ItemTypes[i].ItemName)
+					if ItemTypes[i].ItemName == "Pz1":
+						if quest2.quest_status == quest.QuestStatus.started:
+							quest2.reached_goal()
+							await get_tree().create_timer(3.0).timeout
+							if quest2.quest_status == quest.QuestStatus.reached_goal:
+								quest2.finished_quest()
+								wayafter.spawn()
+					elif ItemTypes[i].ItemName == "Pz2":
+						if quest3.quest_status == quest.QuestStatus.started:
+							quest3.reached_goal()
+							await get_tree().create_timer(3.0).timeout
+							if quest3.quest_status == quest.QuestStatus.reached_goal:
+								quest3.finished_quest()
+						if quest_dialog.quest_status == quest_dialog.QuestStatus.started:
+							emit_signal("display4")
+							quest_dialog.reached_goal()
+							await get_tree().create_timer(10.0).timeout
+							if quest_dialog.quest_status == quest_dialog.QuestStatus.reached_goal:
+								quest_dialog.finished_quest()
+								dialog.visible = false
+								wayafter2.spawn()
 				return
 		
 		printerr("Item not found")

@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			flashlight.visible = true
 			
-	print(self.position)
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")

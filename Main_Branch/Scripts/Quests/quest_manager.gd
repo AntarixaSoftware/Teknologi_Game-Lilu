@@ -29,14 +29,25 @@ func _on_main_scene_loaded():
 
 func init():
 	var quest1 = get_tree().root.get_node("Main Scene/Story/Quests/Accident/Accident_area/accident")
-	var quest2 = get_tree().root.get_node("Main Scene/Story/Quests/Dialog/dialog")
-	var quest3 = get_tree().root.get_node("Main Scene/Story/Quests/Forest/Cabin_area/cabin")
-	var quest4 = get_tree().root.get_node("Main Scene/Story/Quests/Cabin/Inside_cabin/InCabin")
-	var quest5 = get_tree().root.get_node("Main Scene/Story/Quests/Clue/Clue_area/clue")
-	var quest6 = get_tree().root.get_node("Main Scene/Main Character/InteractionArea/key")
-	var quest7 = get_tree().root.get_node("Main Scene/Story/Map/Puzzle")
-	var quest8 = get_tree().root.get_node("Main Scene/Story/Quests/FinalPath/Final/final")
-	var quest9 = get_tree().root.get_node("Main Scene/Story/Quests/MansionEntrance/Enter/Mansion")
+	var quest2 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog/dialog")
+	var quest3 = get_tree().root.get_node("Main Scene/Story/Quests/Cemetry/cemetry_area/cemetry")
+	var quest4 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog2/dialog2")
+	var quest5 = get_tree().root.get_node("Main Scene/Story/Quests/CemetryItem/cemetryitem")
+	var quest6 = get_tree().root.get_node("Main Scene/Story/Quests/DeepForest/forest/forest")
+	var quest7 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog3/dialog3")
+	var quest8 = get_tree().root.get_node("Main Scene/Story/Quests/Backhouse/backhouse/backhouse")
+	var quest9 = get_tree().root.get_node("Main Scene/Story/Quests/HouseItem/houseitem")
+	var quest10 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog4/dialog4")
+	var quest11 = get_tree().root.get_node("Main Scene/Story/Quests/Cave/cave/cave")
+	var quest12 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog5/dialog5")
+	var quest13 = get_tree().root.get_node("Main Scene/Story/Quests/Forest/Cabin_area/cabin")
+	var quest14 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog6/dialog6")
+	var quest15 = get_tree().root.get_node("Main Scene/Story/Quests/Cabin/Inside_cabin/InCabin")
+	var quest16 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog7/dialog7")
+	var quest17 = get_tree().root.get_node("Main Scene/Story/Quests/Clue/Clue_area/clue")
+	var quest18 = get_tree().root.get_node("Main Scene/Main Character/InteractionArea/key")
+	var quest19 = get_tree().root.get_node("Main Scene/Story/Quests/FinalPath/Final/final")
+	var quest20 = get_tree().root.get_node("Main Scene/Story/Quests/MansionEntrance/Enter/Mansion")
 	QuestGlobal.quests.clear()
 	QuestGlobal.quests.append(quest1)
 	QuestGlobal.quests.append(quest2)
@@ -47,13 +58,24 @@ func init():
 	QuestGlobal.quests.append(quest7)
 	QuestGlobal.quests.append(quest8)
 	QuestGlobal.quests.append(quest9)
+	QuestGlobal.quests.append(quest10)
+	QuestGlobal.quests.append(quest11)
+	QuestGlobal.quests.append(quest12)
+	QuestGlobal.quests.append(quest13)
+	QuestGlobal.quests.append(quest14)
+	QuestGlobal.quests.append(quest15)
+	QuestGlobal.quests.append(quest16)
+	QuestGlobal.quests.append(quest17)
+	QuestGlobal.quests.append(quest18)
+	QuestGlobal.quests.append(quest19)
 	await get_tree().create_timer(6.0).timeout
 	start_first_quest()
 
 func start_first_quest():
 	if QuestGlobal.quests.size() > 0:
 		if GameState.entered:
-			if QuestGlobal.current_index == 4:
+			print(QuestGlobal.current_index)
+			if QuestGlobal.current_index == 16:
 				QuestGlobal.current_index += 1
 		else:
 			if QuestGlobal.current_index == 0:
