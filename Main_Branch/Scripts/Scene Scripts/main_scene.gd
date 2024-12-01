@@ -1,7 +1,8 @@
 extends Node3D  # atau tipe node root lainnya
 
 func _ready():
-	_animation()
+	#if not GameState.entered:
+		#_animation()
 	var saved_state = GameState.load_state()
 	if saved_state.has("player_position"):
 		var last_position = saved_state["player_position"]
@@ -16,5 +17,5 @@ func _ready():
 		else:
 			print("Error: Player node tidak ditemukan di main scene.")
 
-func _animation():
-	$Truck/AnimationPlayer.play("TruckCrash")
+#func _animation():
+	#$Truck/AnimationPlayer.play("TruckCrash")
