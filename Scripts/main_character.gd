@@ -29,7 +29,7 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("esc"):
 		$Head/Camera3D/PauseMenu.pause()
 
 func _physics_process(delta: float) -> void:
