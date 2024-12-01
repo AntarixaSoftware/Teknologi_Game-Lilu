@@ -22,15 +22,16 @@ const FOV_CHANGE = 1.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	$"../PauseMenu".mouse_filter = Control.MOUSE_FILTER_IGNORE
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
+		print("Mouse moved: ", event.relative)
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
 	if event.is_action_pressed("esc"):
-		$Head/Camera3D/PauseMenu.pause()
+		$"../PauseMenu".pause()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
