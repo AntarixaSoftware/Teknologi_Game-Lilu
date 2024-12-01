@@ -6,11 +6,16 @@ signal puzzle_collected(has_puzzle: bool)
 @export var quest : Quest
 @export var quest2 : Quest
 @export var quest3 : Quest
+@export var quest4 : Quest
+@export var quest5 : Quest
 @onready var Item = $"../ItemUi"
 @export var key_sound: AudioStreamPlayer
 @export var puzzle_sound: AudioStreamPlayer
 @export var wayafter : Node3D
 @export var wayafter2 : Node3D
+@export var wayafter3 : Node3D
+@export var wayafter4 : Node3D
+@export var wayafter5 :Node3D
 @export var quest_dialog: Quest
 @export var dialog: RichTextLabel
 
@@ -19,8 +24,7 @@ var has_key : bool = false
 var has_puzzle : bool = false
 
 
-const REQUIRED_PUZZLE_ITEMS = ["Pz1", "Pz2", "Pz3", "Pz4"]
-var collected_puzzle_items : Array[String] = []
+
 
 func _input(event : InputEvent) -> void:
 	if (event.is_action_pressed("interact")):
@@ -51,7 +55,8 @@ func PickupNearestItem():
 						await get_tree().create_timer(3.0).timeout
 						if quest.quest_status == quest.QuestStatus.reached_goal:
 							quest.finished_quest()
-				elif REQUIRED_PUZZLE_ITEMS.has(ItemTypes[i].ItemName):
+							wayafter5.spawn()
+				elif QuestGlobal.REQUIRED_PUZZLE_ITEMS.has(ItemTypes[i].ItemName):
 					AddPuzzleItem(ItemTypes[i].ItemName)
 					if ItemTypes[i].ItemName == "Pz1":
 						if quest2.quest_status == quest.QuestStatus.started:
@@ -74,13 +79,27 @@ func PickupNearestItem():
 								quest_dialog.finished_quest()
 								dialog.visible = false
 								wayafter2.spawn()
+					elif ItemTypes[i].ItemName == "Pz3":
+						if quest4.quest_status == quest.QuestStatus.started:
+							quest4.reached_goal()
+							await get_tree().create_timer(3.0).timeout
+							if quest4.quest_status == quest.QuestStatus.reached_goal:
+								quest4.finished_quest()
+								wayafter3.spawn()
+					elif ItemTypes[i].ItemName == "Pz4":
+						if quest5.quest_status == quest.QuestStatus.started:
+							quest5.reached_goal()
+							await get_tree().create_timer(3.0).timeout
+							if quest5.quest_status == quest.QuestStatus.reached_goal:
+								quest5.finished_quest()
+								wayafter4.spawn()
 				return
 		
 		printerr("Item not found")
 
 func AddPuzzleItem(item_name : String):
-	if not collected_puzzle_items.has(item_name):
-		collected_puzzle_items.append(item_name)
+	if not QuestGlobal.collected_puzzle_items.has(item_name):
+		QuestGlobal.collected_puzzle_items.append(item_name)
 		print("Puzzle item diambil: " + item_name)
 		if puzzle_sound:
 			puzzle_sound.play()
@@ -88,7 +107,7 @@ func AddPuzzleItem(item_name : String):
 		CheckPuzzleCompletion()
 
 func CheckPuzzleCompletion():
-	if collected_puzzle_items.size() == REQUIRED_PUZZLE_ITEMS.size():
+	if QuestGlobal.collected_puzzle_items.size() == QuestGlobal.REQUIRED_PUZZLE_ITEMS.size():
 		has_puzzle = true
 		emit_signal("puzzle_collected", has_puzzle)
 		await get_tree().create_timer(3.0).timeout

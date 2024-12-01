@@ -40,14 +40,17 @@ func init():
 	var quest10 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog4/dialog4")
 	var quest11 = get_tree().root.get_node("Main Scene/Story/Quests/Cave/cave/cave")
 	var quest12 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog5/dialog5")
-	var quest13 = get_tree().root.get_node("Main Scene/Story/Quests/Forest/Cabin_area/cabin")
-	var quest14 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog6/dialog6")
-	var quest15 = get_tree().root.get_node("Main Scene/Story/Quests/Cabin/Inside_cabin/InCabin")
-	var quest16 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog7/dialog7")
-	var quest17 = get_tree().root.get_node("Main Scene/Story/Quests/Clue/Clue_area/clue")
-	var quest18 = get_tree().root.get_node("Main Scene/Main Character/InteractionArea/key")
-	var quest19 = get_tree().root.get_node("Main Scene/Story/Quests/FinalPath/Final/final")
-	var quest20 = get_tree().root.get_node("Main Scene/Story/Quests/MansionEntrance/Enter/Mansion")
+	var quest13 = get_tree().root.get_node("Main Scene/Story/Quests/CaveItem/caveitem")
+	var quest14 = get_tree().root.get_node("Main Scene/Story/Quests/Tree/treearea/tree")
+	var quest15 = get_tree().root.get_node("Main Scene/Story/Quests/TreeItem/treeitem")
+	var quest16 = get_tree().root.get_node("Main Scene/Story/Quests/Forest/Cabin_area/cabin")
+	var quest17 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog6/dialog6")
+	var quest18 = get_tree().root.get_node("Main Scene/Story/Quests/Cabin/Inside_cabin/InCabin")
+	var quest19 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog7/dialog7")
+	var quest20 = get_tree().root.get_node("Main Scene/Story/Quests/Clue/Clue_area/clue")
+	var quest21 = get_tree().root.get_node("Main Scene/Main Character/InteractionArea/key")
+	var quest22 = get_tree().root.get_node("Main Scene/Story/Quests/FinalPath/Final/final")
+	var quest23 = get_tree().root.get_node("Main Scene/Story/Quests/MansionEntrance/Enter/Mansion")
 	QuestGlobal.quests.clear()
 	QuestGlobal.quests.append(quest1)
 	QuestGlobal.quests.append(quest2)
@@ -68,6 +71,10 @@ func init():
 	QuestGlobal.quests.append(quest17)
 	QuestGlobal.quests.append(quest18)
 	QuestGlobal.quests.append(quest19)
+	QuestGlobal.quests.append(quest20)
+	QuestGlobal.quests.append(quest21)
+	QuestGlobal.quests.append(quest22)
+	QuestGlobal.quests.append(quest23)
 	await get_tree().create_timer(6.0).timeout
 	start_first_quest()
 
@@ -75,7 +82,7 @@ func start_first_quest():
 	if QuestGlobal.quests.size() > 0:
 		if GameState.entered:
 			print(QuestGlobal.current_index)
-			if QuestGlobal.current_index == 16:
+			if QuestGlobal.current_index == 19:
 				QuestGlobal.current_index += 1
 		else:
 			if QuestGlobal.current_index == 0:

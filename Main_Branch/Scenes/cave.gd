@@ -3,7 +3,6 @@ extends Area3D
 signal display5
 @export var quest: Quest
 @export var waybefore : Node3D
-@export var wayafter : Node3D
 @export var quest_dialog: Quest
 @onready var dialog = $"../../../Dialogs/Dialog5/RichTextLabel"
 
@@ -24,4 +23,3 @@ func _on_body_entered(body: Node3D) -> void:
 				if quest_dialog.quest_status == quest_dialog.QuestStatus.reached_goal:
 					quest_dialog.finished_quest()
 					dialog.visible = false
-					wayafter.spawn()
