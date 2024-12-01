@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Teknologi Game: Lilu"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://checkpoint_and_radial_effect/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://checkpoint_and_radial_effect/icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
 
 [filesystem]
 

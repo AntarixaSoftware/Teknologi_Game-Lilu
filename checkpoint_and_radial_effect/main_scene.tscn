@@ -1,11 +1,11 @@
 [gd_scene load_steps=31 format=4 uid="uid://bnvp2w1igs0to"]
 
-[ext_resource type="Script" path="res://main_character.gd" id="1_ahtcp"]
-[ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://Assets/crosshair.png" id="1_yweky"]
-[ext_resource type="Script" path="res://ray_cast_3d.gd" id="3_bt6ct"]
-[ext_resource type="Script" path="res://hantu.gd" id="4_86aa5"]
-[ext_resource type="Script" path="res://door_model.gd" id="4_kvt05"]
-[ext_resource type="Texture2D" uid="uid://n5xd7vkysq0m" path="res://Assets/BloodOverlay.png" id="4_vcs07"]
+[ext_resource type="Script" path="res://checkpoint_and_radial_effect/main_character.gd" id="1_ahtcp"]
+[ext_resource type="Texture2D" uid="uid://c5ufwagi62j1p" path="res://checkpoint_and_radial_effect/Assets/crosshair.png" id="1_yweky"]
+[ext_resource type="Script" path="res://checkpoint_and_radial_effect/ray_cast_3d.gd" id="3_bt6ct"]
+[ext_resource type="Script" path="res://checkpoint_and_radial_effect/hantu.gd" id="4_86aa5"]
+[ext_resource type="Script" path="res://checkpoint_and_radial_effect/door_model.gd" id="4_kvt05"]
+[ext_resource type="Texture2D" uid="uid://n5xd7vkysq0m" path="res://checkpoint_and_radial_effect/Assets/BloodOverlay.png" id="4_vcs07"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21jgi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

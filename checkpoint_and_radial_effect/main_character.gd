@@ -116,7 +116,7 @@ func _headbob(time) -> Vector3:
 
 func _go_to_main_menu():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://checkpoint_and_radial_effect/Scenes/main_menu.tscn")
 	
 func kill_player():
 	player_state = PlayerState.DEAD
