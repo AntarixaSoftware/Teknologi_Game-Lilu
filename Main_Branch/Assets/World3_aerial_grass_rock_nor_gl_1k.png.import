@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://11eve7bt2qt4"
+uid="uid://coxc0i6y7nq1a"
 path.s3tc="res://.godot/imported/World3_aerial_grass_rock_nor_gl_1k.png-1b8bc97c535cafc2c720f4c89479c1b9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "98314c569fde3bafe0a5251591079117"
 }
 
 [deps]

@@ -1,7 +1,6 @@
 extends Area3D
 
 signal display4
-signal puzzle_collected(has_puzzle: bool)
 @export var ItemTypes : Array[ItemData] = []
 @export var quest : Quest
 @export var quest2 : Quest
@@ -21,7 +20,7 @@ signal puzzle_collected(has_puzzle: bool)
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
-var has_puzzle : bool = false
+
 
 
 
@@ -108,8 +107,7 @@ func AddPuzzleItem(item_name : String):
 
 func CheckPuzzleCompletion():
 	if QuestGlobal.collected_puzzle_items.size() == QuestGlobal.REQUIRED_PUZZLE_ITEMS.size():
-		has_puzzle = true
-		emit_signal("puzzle_collected", has_puzzle)
+		QuestGlobal.has_puzzle = true
 		await get_tree().create_timer(3.0).timeout
 
 func OnObjectEnteredArea(body : Node3D ):

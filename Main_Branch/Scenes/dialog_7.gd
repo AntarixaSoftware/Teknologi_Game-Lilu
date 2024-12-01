@@ -13,7 +13,7 @@ var current_dialog: String = ""
 var display_text: String = ""  # Teks yang muncul satu per satu
 var char_index: int = 0  # Indeks untuk huruf
 var dialog_index: int = 0  # Indeks untuk antrean dialog
-var char_interval: float = 0.05
+var char_interval: float = 0.03
 
 func _ready():
 	var start = get_node("/root/Main Scene/Story/Quests/Cabin/Inside_cabin")

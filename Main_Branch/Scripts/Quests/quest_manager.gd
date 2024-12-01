@@ -28,6 +28,11 @@ func _on_main_scene_loaded():
 	init()
 
 func init():
+	var pz1_node = get_tree().root.get_node("Main Scene/Story/Items/Pz1")
+	var pz2_node = get_tree().root.get_node("Main Scene/Story/Items/Pz2")
+	var pz3_node = get_tree().root.get_node("Main Scene/Story/Items/Pz3")
+	var pz4_node = get_tree().root.get_node("Main Scene/Story/Items/Pz4")
+	var key_node = get_tree().root.get_node("Main Scene/Story/Items/Key")
 	var quest1 = get_tree().root.get_node("Main Scene/Story/Quests/Accident/Accident_area/accident")
 	var quest2 = get_tree().root.get_node("Main Scene/Story/Dialogs/Dialog/dialog")
 	var quest3 = get_tree().root.get_node("Main Scene/Story/Quests/Cemetry/cemetry_area/cemetry")
@@ -75,6 +80,12 @@ func init():
 	QuestGlobal.quests.append(quest21)
 	QuestGlobal.quests.append(quest22)
 	QuestGlobal.quests.append(quest23)
+	QuestGlobal.items.clear()
+	QuestGlobal.items.append(pz1_node)
+	QuestGlobal.items.append(pz2_node)
+	QuestGlobal.items.append(pz3_node)
+	QuestGlobal.items.append(pz4_node)
+	QuestGlobal.items.append(key_node)
 	await get_tree().create_timer(6.0).timeout
 	start_first_quest()
 
@@ -84,6 +95,7 @@ func start_first_quest():
 			print(QuestGlobal.current_index)
 			if QuestGlobal.current_index == 19:
 				QuestGlobal.current_index += 1
+				QuestGlobal.items[4].visible = true
 		else:
 			if QuestGlobal.current_index == 0:
 				var firstway = get_tree().root.get_node("Main Scene/Story/Quests/Accident/waypoint")
@@ -93,4 +105,12 @@ func start_first_quest():
 
 func next_quest():
 	QuestGlobal.current_index += 1
+	if QuestGlobal.current_index == 4:
+		QuestGlobal.items[0].visible = true
+	if QuestGlobal.current_index == 8:
+		QuestGlobal.items[1].visible = true
+	if QuestGlobal.current_index == 12:
+		QuestGlobal.items[2].visible = true
+	if QuestGlobal.current_index == 14:		
+		QuestGlobal.items[3].visible = true
 	QuestGlobal.quests[QuestGlobal.current_index].start_quest()
