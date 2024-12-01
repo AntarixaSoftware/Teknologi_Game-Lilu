@@ -2,7 +2,6 @@ extends Node3D
 
 @onready var rich_text_label = $RichTextLabel
 @onready var timer = $Timer
-
 # Variabel daftar dialog
 var dialog_queue: Array = [
 	{"name": "Charles", "dialog":"Aduh, siapa semua orang ini? Kuburan ini, kenapa banyak sekali... Jangan bilang ini orang-orang yang bernasib sama denganku." },
@@ -14,7 +13,7 @@ var current_dialog: String = ""
 var display_text: String = ""  # Teks yang muncul satu per satu
 var char_index: int = 0  # Indeks untuk huruf
 var dialog_index: int = 0  # Indeks untuk antrean dialog
-var char_interval: float = 0.03
+var char_interval: float = 0.1
 
 func _ready():
 	var start = get_node("/root/Main Scene/Story/Quests/Cemetry/cemetry_area")
@@ -45,7 +44,7 @@ func _load_next_dialog():
 	else:
 		print("All dialogs displayed.")
 		timer.stop()
-
+		
 func _on_timer_timeout():
 	if char_index < current_dialog.length():
 		display_text += current_dialog[char_index]

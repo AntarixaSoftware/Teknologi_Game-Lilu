@@ -17,6 +17,7 @@ signal display4
 @export var wayafter5 :Node3D
 @export var quest_dialog: Quest
 @export var dialog: RichTextLabel
+@export var dialog_sound_player : AudioStreamPlayer
 
 var NearbyBodies : Array[InteractableItem]
 var has_key : bool = false
@@ -73,8 +74,12 @@ func PickupNearestItem():
 						if quest_dialog.quest_status == quest_dialog.QuestStatus.started:
 							emit_signal("display4")
 							quest_dialog.reached_goal()
-							await get_tree().create_timer(10.0).timeout
+							if !dialog_sound_player.is_playing():
+								dialog_sound_player.play()
+							await get_tree().create_timer(22.0).timeout
 							if quest_dialog.quest_status == quest_dialog.QuestStatus.reached_goal:
+								if dialog_sound_player.is_playing():
+									dialog_sound_player.stop()
 								quest_dialog.finished_quest()
 								dialog.visible = false
 								wayafter2.spawn()

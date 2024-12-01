@@ -5,6 +5,7 @@ signal display5
 @export var waybefore : Node3D
 @export var quest_dialog: Quest
 @onready var dialog = $"../../../Dialogs/Dialog5/RichTextLabel"
+@export var dialog_sound_player : AudioStreamPlayer
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
@@ -19,7 +20,11 @@ func _on_body_entered(body: Node3D) -> void:
 			if quest_dialog.quest_status == quest_dialog.QuestStatus.started:
 				emit_signal("display5")
 				quest_dialog.reached_goal()
-				await get_tree().create_timer(10.0).timeout
+				if !dialog_sound_player.is_playing():
+					dialog_sound_player.play()
+				await get_tree().create_timer(18.0).timeout
 				if quest_dialog.quest_status == quest_dialog.QuestStatus.reached_goal:
+					if dialog_sound_player.is_playing():
+						dialog_sound_player.stop()
 					quest_dialog.finished_quest()
 					dialog.visible = false
