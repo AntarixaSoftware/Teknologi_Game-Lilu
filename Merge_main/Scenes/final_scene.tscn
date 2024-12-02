@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tjliq1iapjlq"]
+
+[ext_resource type="PackedScene" uid="uid://dwinv26b1051y" path="res://Merge_main/Assets/Buildings/Mansion/Mansion.glb" id="1_wrwbk"]
+
+[node name="Final Scene" type="Node3D"]
+
+[node name="Mansion" parent="." instance=ExtResource("1_wrwbk")]
