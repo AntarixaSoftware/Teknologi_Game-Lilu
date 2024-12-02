@@ -1,3 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Dialog/Scenes/main_scene.tscn
+Dialog/Dialog_sound/dialog7.mp3
+Dialog/Dialog_sound/dialog6.mp3
+Dialog/Dialog_sound/dialog5.mp3
+Dialog/Dialog_sound/dialog4.mp3
+Dialog/Dialog_sound/dialog3.mp3
+Dialog/Dialog_sound/dialog2.mp3
+Dialog/Dialog_sound/dialog1.mp3
