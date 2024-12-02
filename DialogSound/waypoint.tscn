@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hy4mevg5q0p"]
+
+[ext_resource type="Script" path="res://Main_Branch/Scenes/waypoint.gd" id="1_8454c"]
+[ext_resource type="Texture2D" uid="uid://tk8edebpoot1" path="res://Main_Branch/Assets/From Inventory/waypoint.png" id="2_abcgt"]
+
+[node name="waypoint" type="Node3D" node_paths=PackedStringArray("cam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116, 2, 13)
+script = ExtResource("1_8454c")
+cam = NodePath("")
+
+[node name="origin" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="origin"]
+position = Vector2(-1, -1)
+scale = Vector2(0.142681, 0.136952)
+texture = ExtResource("2_abcgt")
