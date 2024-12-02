@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cmkt4x0rksi8t"
-path="res://.godot/imported/DoorFinal.blend-b881f885c342879149cf2735c8a2dffe.scn"
+path="res://.godot/imported/DoorFinal.blend-bca90a04567954b209080a47aca746d0.scn"
 
 [deps]
 
-source_file="res://Assets/DoorFinal.blend"
-dest_files=["res://.godot/imported/DoorFinal.blend-b881f885c342879149cf2735c8a2dffe.scn"]
+source_file="res://checkpoint_and_radial_effect/Assets/DoorFinal.blend"
+dest_files=["res://.godot/imported/DoorFinal.blend-bca90a04567954b209080a47aca746d0.scn"]
 
 [params]
 
