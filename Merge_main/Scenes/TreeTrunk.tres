@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dqcmq1go5f6yq"]
+
+[ext_resource type="Texture2D" uid="uid://56yeufqmrqid" path="res://Merge_main/Assets/Trees/BarkDecidious0194_7_S.jpg" id="1_0vuxt"]
+
+[resource]
+transparency = 3
+alpha_hash_scale = 0.0
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_0vuxt")
+texture_filter = 5
+texture_repeat = false
+distance_fade_mode = 1
+distance_fade_min_distance = 50.0
+distance_fade_max_distance = 0.0

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://f2owodxd6ab3"]
+
+[ext_resource type="Texture2D" uid="uid://b2251jemjmje4" path="res://Main_Branch/World/FinalWorld_Grass.png" id="1_a52j8"]
+
+[resource]
+resource_name = "Material.018"
+cull_mode = 2
+albedo_texture = ExtResource("1_a52j8")
+roughness = 0.5
+distance_fade_mode = 1
+distance_fade_min_distance = 25.0
+distance_fade_max_distance = 1.0

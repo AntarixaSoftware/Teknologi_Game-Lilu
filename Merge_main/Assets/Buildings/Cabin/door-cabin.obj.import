@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8fw4lxe6a23g"
+path="res://.godot/imported/door-cabin.obj-a826585a353de0d054702cc760a86e3a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-cabin.obj-a826585a353de0d054702cc760a86e3a.mesh"]
+
+source_file="res://Merge_main/Assets/Buildings/Cabin/door-cabin.obj"
+dest_files=["res://.godot/imported/door-cabin.obj-a826585a353de0d054702cc760a86e3a.mesh", "res://.godot/imported/door-cabin.obj-a826585a353de0d054702cc760a86e3a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
