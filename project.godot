@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Teknologi Game: Lilu"
-run/main_scene="res://pause/Scenes/Intro/intro.tscn"
+run/main_scene="res://credits/Scenes/Intro/intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [editor_plugins]
