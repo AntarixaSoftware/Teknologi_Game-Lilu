@@ -23,6 +23,7 @@ const FOV_CHANGE = 1.5
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$"../PauseMenu".mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		print("Mouse moved: ", event.relative)
