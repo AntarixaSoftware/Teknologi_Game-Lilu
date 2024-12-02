@@ -26,12 +26,13 @@ func Physics_Update(delta: float):
 	var distance = direction.length()
 
 	# Clamp target position within follow boundaries
-	if not is_within_bounds(target_position):
-		print("Player is out of bounds. Staying within the follow area.")
-		target_position = clamp_position_within_bounds(target_position)
+	#if not is_within_bounds(target_position):
+		#print("Player is out of bounds. Staying within the follow area.")
+		#target_position = clamp_position_within_bounds(target_position)
 
 	# Move towards the player if within range and bounds
 	if distance > 2 and distance <= 10:
+		$"../../AnimationPlayer".play("Chase")
 		enemy.velocity = (target_position - enemy.global_position).normalized() * move_speed
 		enemy.look_at(player.global_position, Vector3.UP)
 	else:
@@ -42,10 +43,10 @@ func Physics_Update(delta: float):
 		print("Player out of follow range, transitioning to EnemyIdle.")
 		Transitioned.emit(self, "enemyidle")
 
-func is_within_bounds(position: Vector3) -> bool:
-	# Check if position is within the defined follow area
-	return position.x >= follow_area_min.x and position.x <= follow_area_max.x \
-		and position.z >= follow_area_min.z and position.z <= follow_area_max.z
+#func is_within_bounds(position: Vector3) -> bool:
+	# #Check if position is within the defined follow area
+	#return position.x >= follow_area_min.x and position.x <= follow_area_max.x \
+		#and position.z >= follow_area_min.z and position.z <= follow_area_max.z
 
 func clamp_position_within_bounds(position: Vector3) -> Vector3:
 	# Clamp position to stay within the defined bounds

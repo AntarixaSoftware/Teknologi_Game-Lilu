@@ -2,9 +2,9 @@ extends State
 class_name EnemyAttack
 
 @export var enemy: CharacterBody3D
-@export var attack_range := 2.0  # Distance within which the enemy attacks
+@export var attack_range := 4.0  # Distance within which the enemy attacks
 @export var attack_cooldown := 1.5  # Time between consecutive attacks
-@export var attack_damage : int = 1  # Damage dealt to the player
+@export var attack_damage : int = 50  # Damage dealt to the player
 @onready var player: CharacterBody3D = null
 
 var cooldown_timer: float = 0.0
@@ -46,8 +46,9 @@ func Physics_Update(delta: float):
 	enemy.look_at(player.global_position, Vector3.UP)  # Face the player
 
 	print("Enemy attacks the player!")
-	$"../../AnimationPlayer".play("Attack")
 	_attack_player()
+	$"../../AnimationPlayer".play("Attack")
+	
 	
 	cooldown_timer = attack_cooldown  # Reset cooldown
 

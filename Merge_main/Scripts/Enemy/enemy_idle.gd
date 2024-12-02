@@ -49,9 +49,11 @@ func Update(delta: float):
 
 	# Wander logic
 	if pause_time > 0:
+		$"../../AnimationPlayer".play("Idle")
 		pause_time -= delta
 		return
 	if wander_time > 0:
+		$"../../AnimationPlayer".play("Walk")
 		wander_time -= delta
 	else:
 		randomize_wander()
