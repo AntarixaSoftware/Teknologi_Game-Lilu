@@ -11,16 +11,16 @@ config_version=5
 [application]
 
 config/name="Teknologi Game: Lilu"
-run/main_scene="res://Main_Branch/Scenes/Intro/intro.tscn"
+run/main_scene="res://Dialog/Scenes/Intro/intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://basic_inventory/icon.svg"
 
 [autoload]
 
-GameState="*res://Main_Branch/Scripts/Quests/GameState.gd"
-GameManager="*res://Main_Branch/Scenes/gamemanager.tscn"
-Questmanager="*res://Main_Branch/Scripts/Quests/quest_manager.gd"
-QuestGlobal="*res://Main_Branch/Scripts/Quests/questglobal.gd"
+GameState="*res://Dialog/Scripts/Quests/GameState.gd"
+GameManager="*res://Dialog/Scenes/gamemanager.tscn"
+Questmanager="*res://Dialog/Scripts/Quests/quest_manager.gd"
+QuestGlobal="*res://Dialog/Scripts/Quests/questglobal.gd"
 
 [editor_plugins]
 

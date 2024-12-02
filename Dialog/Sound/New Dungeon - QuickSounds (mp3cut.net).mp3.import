@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1c74wmhq5i8e"
+path="res://.godot/imported/New Dungeon - QuickSounds (mp3cut.net).mp3-e878835fd558f0a603970c24775ea37b.mp3str"
+
+[deps]
+
+source_file="res://Dialog/Sound/New Dungeon - QuickSounds (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/New Dungeon - QuickSounds (mp3cut.net).mp3-e878835fd558f0a603970c24775ea37b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
