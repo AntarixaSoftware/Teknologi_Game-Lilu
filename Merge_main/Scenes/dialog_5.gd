@@ -2,7 +2,6 @@ extends Node3D
 
 @onready var rich_text_label = $RichTextLabel
 @onready var timer = $Timer
-
 # Variabel daftar dialog
 var dialog_queue: Array = [
 	{"name": "Charles", "dialog": "Ya ampun, gelap kali gua ini. Seram pula... Ucok, kau lihat itu? Ada bekas perdukunan di sini!"
@@ -15,7 +14,7 @@ var current_dialog: String = ""
 var display_text: String = ""  # Teks yang muncul satu per satu
 var char_index: int = 0  # Indeks untuk huruf
 var dialog_index: int = 0  # Indeks untuk antrean dialog
-var char_interval: float = 0.03
+var char_interval: float = 0.1
 
 func _ready():
 	var start = get_node("/root/Main Scene/Story/Quests/Cave/cave")
@@ -36,7 +35,7 @@ func _load_next_dialog():
 		current_dialog = entry["dialog"]
 		display_text = ""
 		char_index = 0
-
+		
 		rich_text_label.bbcode_enabled = true
 		rich_text_label.text = "[b]" + current_name + ": [/b]"
 
