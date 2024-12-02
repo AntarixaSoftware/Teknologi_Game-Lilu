@@ -31,6 +31,8 @@ var line_timer := 0.0
 var curr_line := 0
 var lines := []
 
+@onready var main_menu = preload("res://credits/Scenes/Intro/intro.tscn") as PackedScene
+
 var credits = [
 	[
 		"LILU"
@@ -106,11 +108,14 @@ func _process(delta):
 func finish():
 	if not finished:
 		finished = true
-		if to_scene != null:
-			var path = to_scene.get_path()
-			get_tree().change_scene_to_file(path)
+		if main_menu != null:
+			var path = main_menu.get_path()
+			print("Changing scene to:", "res://credits/Scenes/Intro/intro.tscn") # Debugging output
+			get_tree().change_scene_to_file("res://credits/Scenes/Intro/intro.tscn")
 		else:
+			print("No scene assigned. Exiting game.") # Debugging output
 			get_tree().quit()
+
 
 
 func add_line():
