@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drsjxprtnblr0"
+uid="uid://bk0vtaubhhc8w"
 path.s3tc="res://.godot/imported/bolon_house_textured_join_brown_planks_08_rough_1k.png-7f6d59dc3f6f0d5a03667a54cc80d887.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "8c41972522cffb0b6449ab55391ea13a"
 }
 
 [deps]

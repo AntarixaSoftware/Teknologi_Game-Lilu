@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btr32v8j32goc"
+uid="uid://c5qa1pi0ofkkd"
 path.s3tc="res://.godot/imported/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg-dcdad83926846f6104795ffd84becc45.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "2eb347a8854dabfed22a60c474719d8f"
 }
 
 [deps]

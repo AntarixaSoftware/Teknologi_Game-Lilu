@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccksbf56xqkr2"
+uid="uid://bve35r1dtw4kp"
 path.s3tc="res://.godot/imported/FinalWorld_worn_corrugated_iron_rough_1k.png-77c22dadd40b2d0e864fe0fac6ef910f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "2df6d323fa68ef609e0642cd43b79a90"
 }
 
 [deps]

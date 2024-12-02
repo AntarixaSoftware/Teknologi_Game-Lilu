@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7vicnmhqsleh"
+uid="uid://c4u8ci06utaot"
 path.s3tc="res://.godot/imported/bolon_house_textured_join_brown_planks_08_nor_gl_1k.png-b2a5de7ae36cd3ea8c93ba8da483f224.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "cec15c8e2572509457bc16ed3e2888e5"
 }
 
 [deps]
@@ -27,8 +24,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Main_Branch/Assets/bolon_house_textured_join_brown_planks_08_nor_gl_1k.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

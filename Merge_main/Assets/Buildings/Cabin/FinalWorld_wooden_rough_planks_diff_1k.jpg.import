@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72o37k0bfbeu"
+uid="uid://ddebjtc2hwkp4"
 path.s3tc="res://.godot/imported/FinalWorld_wooden_rough_planks_diff_1k.jpg-4bf7c5ce7097af98a98b4f6ecbd70c2f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "e30976a099d8d593dd4708b05f0c1b2f"
 }
 
 [deps]

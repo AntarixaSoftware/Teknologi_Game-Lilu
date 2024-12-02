@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwfjjbwfn1a8b"
+uid="uid://chc3yc1i0kh5j"
 path.s3tc="res://.godot/imported/candle_low_1.png-9bb6f8c5d51565025b9b60ef766c0aaf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "1f5c6fb742dd1ce5d01459fdba283a01"
 }
 
 [deps]

@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5q1prp2dxxyc"
+<<<<<<<< HEAD:Merge_main/Terrain/color.png.import
 path="res://.godot/imported/color.png-cd98a87f9c8b7dad3349705154951212.ctex"
+========
+path="res://.godot/imported/color.png-3fdf18fb4e906dc6500d913a64b4cd26.ctex"
+>>>>>>>> PauseMenu:pause/Terrain/color.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Merge_main/Terrain/color.png.import
 source_file="res://Main_Branch/Terrain/color.png"
 dest_files=["res://.godot/imported/color.png-cd98a87f9c8b7dad3349705154951212.ctex"]
+========
+source_file="res://pause/Terrain/color.png"
+dest_files=["res://.godot/imported/color.png-3fdf18fb4e906dc6500d913a64b4cd26.ctex"]
+>>>>>>>> PauseMenu:pause/Terrain/color.png.import
 
 [params]
 

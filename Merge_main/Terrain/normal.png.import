@@ -3,7 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d37d1hl6q8wtc"
+<<<<<<<< HEAD:Merge_main/Terrain/normal.png.import
 path.s3tc="res://.godot/imported/normal.png-cdc1595fd99914b9557980d8454dbcdc.s3tc.ctex"
+========
+path.s3tc="res://.godot/imported/normal.png-aaa8e3a1496be26a8025cb1c3acfa67e.s3tc.ctex"
+>>>>>>>> PauseMenu:pause/Terrain/normal.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +15,13 @@ metadata={
 
 [deps]
 
+<<<<<<<< HEAD:Merge_main/Terrain/normal.png.import
 source_file="res://Main_Branch/Terrain/normal.png"
 dest_files=["res://.godot/imported/normal.png-cdc1595fd99914b9557980d8454dbcdc.s3tc.ctex"]
+========
+source_file="res://pause/Terrain/normal.png"
+dest_files=["res://.godot/imported/normal.png-aaa8e3a1496be26a8025cb1c3acfa67e.s3tc.ctex"]
+>>>>>>>> PauseMenu:pause/Terrain/normal.png.import
 
 [params]
 

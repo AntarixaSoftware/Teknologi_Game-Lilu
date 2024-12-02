@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m4rck6c5vipb"
+uid="uid://bx5078f7p22nc"
 path.s3tc="res://.godot/imported/FinalWorld_wood_peeling_paint_weathered_nor_gl_1k.png-6e4fcae65833c7e209ef8b124c82cd8f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "14d23f4da7371fe843cf96e1767fb1e9"
 }
 
 [deps]
@@ -27,8 +24,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Main_Branch/World/Plane/FinalWorld_wood_peeling_paint_weathered_nor_gl_1k.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

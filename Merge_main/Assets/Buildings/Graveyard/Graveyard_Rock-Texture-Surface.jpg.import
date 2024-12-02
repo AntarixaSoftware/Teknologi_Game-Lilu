@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs1jnch28opjm"
+uid="uid://cl8mif6juosro"
 path.s3tc="res://.godot/imported/Graveyard_Rock-Texture-Surface.jpg-d6577c1f48d0dc3c5d16ecda8a9e554d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "9841cbf9f3a4d97a7c5b6cb7acc967c6"
 }
 
 [deps]

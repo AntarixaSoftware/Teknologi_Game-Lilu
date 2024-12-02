@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dto3msyhik3hg"
+<<<<<<<< HEAD:Merge_main/Terrain/global_albedo.png.import
 path="res://.godot/imported/global_albedo.png-fc4a55abb2da8e51941326d6a0d776bf.ctex"
+========
+path="res://.godot/imported/global_albedo.png-7ce6b3e78c0f008f449f984959a0fe3f.ctex"
+>>>>>>>> PauseMenu:pause/Terrain/global_albedo.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Merge_main/Terrain/global_albedo.png.import
 source_file="res://Main_Branch/Terrain/global_albedo.png"
 dest_files=["res://.godot/imported/global_albedo.png-fc4a55abb2da8e51941326d6a0d776bf.ctex"]
+========
+source_file="res://pause/Terrain/global_albedo.png"
+dest_files=["res://.godot/imported/global_albedo.png-7ce6b3e78c0f008f449f984959a0fe3f.ctex"]
+>>>>>>>> PauseMenu:pause/Terrain/global_albedo.png.import
 
 [params]
 

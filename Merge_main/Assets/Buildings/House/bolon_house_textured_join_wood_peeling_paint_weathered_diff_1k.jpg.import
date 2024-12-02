@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvpa3ltfa8g37"
+uid="uid://bjnnvh4c7vvnt"
 path.s3tc="res://.godot/imported/bolon_house_textured_join_wood_peeling_paint_weathered_diff_1k.jpg-56208af77e8e00915fed4ef51c01d9ac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "2eb347a8854dabfed22a60c474719d8f"
 }
 
 [deps]

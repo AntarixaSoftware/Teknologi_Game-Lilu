@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cv3uk6hm4f3qp"
+uid="uid://b7y0tudxsa8jx"
 path="res://.godot/imported/bolon_house_textured_join.glb-00a8614236d7ca0429411579138c7f13.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

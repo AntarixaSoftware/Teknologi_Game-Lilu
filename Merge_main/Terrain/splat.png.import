@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0qad5mphon3r"
+<<<<<<<< HEAD:Merge_main/Terrain/splat.png.import
 path="res://.godot/imported/splat.png-ac60d1b08db9af0a7870566781fe7719.ctex"
+========
+path="res://.godot/imported/splat.png-14c7bb4af136db4a0267508b5f078a1a.ctex"
+>>>>>>>> PauseMenu:pause/Terrain/splat.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Merge_main/Terrain/splat.png.import
 source_file="res://Main_Branch/Terrain/splat.png"
 dest_files=["res://.godot/imported/splat.png-ac60d1b08db9af0a7870566781fe7719.ctex"]
+========
+source_file="res://pause/Terrain/splat.png"
+dest_files=["res://.godot/imported/splat.png-14c7bb4af136db4a0267508b5f078a1a.ctex"]
+>>>>>>>> PauseMenu:pause/Terrain/splat.png.import
 
 [params]
 
