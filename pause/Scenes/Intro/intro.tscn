@@ -223,6 +223,7 @@ offset_bottom = 40.0
 script = ExtResource("2_dev3l")
 
 [node name="MarginContainer" type="MarginContainer" parent="Intro/MainMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -245,7 +246,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Intro/MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 128
 text = "LILU"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -265,27 +266,35 @@ layout_mode = 2
 [node name="Separator3" type="Control" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Separator4" type="Control" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator5" type="Control" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator6" type="Control" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Start_Button" type="Button" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Start"
 
 [node name="Setting_Button" type="Button" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Setting
 "
 
 [node name="Quit_Button" type="Button" parent="Intro/MainMenu/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Quit"
 
 [node name="Setting" type="Control" parent="Intro/MainMenu"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

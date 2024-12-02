@@ -6,7 +6,7 @@ extends Control
 @onready var quit_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/Quit_Button as Button
 @onready var setting_menu: SettingMenu = $Setting as SettingMenu
 @onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
-@onready var start_level = preload("res://Scenes/main_scene.tscn") as PackedScene
+@onready var start_level = preload("res://pause/Scenes/main_scene.tscn") as PackedScene
 
 func _ready():
 	handle_connecting_signals()

@@ -38,5 +38,5 @@ func to_intro():
 		return
 	print("Switching to intro scene...")
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/Intro/intro.tscn")
+	get_tree().change_scene_to_file("res://pause/Scenes/Intro/intro.tscn")
 	print("Intro scene loaded successfully.")
