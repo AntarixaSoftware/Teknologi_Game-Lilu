@@ -15,6 +15,13 @@ run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://Main/Scripts/Global/GameState.gd"
+GameManager="*res://Main/Scripts/Global/GameManager.tscn"
+QuestGlobal="*res://Main/Scripts/Global/QuestGlobal.gd"
+QuestManagers="*res://Main/Scripts/Global/QuestManagers.gd"
+
 [display]
 
 window/size/viewport_width=1280
