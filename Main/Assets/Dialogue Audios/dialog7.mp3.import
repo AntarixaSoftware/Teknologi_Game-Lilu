@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t3l1amrxf13c"
+path="res://.godot/imported/dialog7.mp3-033e1951eb48f84c22719a857618b42f.mp3str"
+
+[deps]
+
+source_file="res://Main/Assets/Dialogue Audios/dialog7.mp3"
+dest_files=["res://.godot/imported/dialog7.mp3-033e1951eb48f84c22719a857618b42f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
