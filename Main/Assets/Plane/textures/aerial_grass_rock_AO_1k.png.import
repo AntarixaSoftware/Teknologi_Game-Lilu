@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cm7rwptjaof4l"
-path.s3tc="res://.godot/imported/aerial_grass_rock_AO_1k.png-b985003e0f015d3c9f66c2ca8bc2124a.s3tc.ctex"
+path.s3tc="res://.godot/imported/aerial_grass_rock_AO_1k.png-45726c3af05aab3eacd649174d4b3a9a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/textures/aerial_grass_rock_AO_1k.png"
-dest_files=["res://.godot/imported/aerial_grass_rock_AO_1k.png-b985003e0f015d3c9f66c2ca8bc2124a.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/textures/aerial_grass_rock_AO_1k.png"
+dest_files=["res://.godot/imported/aerial_grass_rock_AO_1k.png-45726c3af05aab3eacd649174d4b3a9a.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chc3yc1i0kh5j"
-path.s3tc="res://.godot/imported/candle_low_1.png-23cbf23b49a18f75757b742113cc7481.s3tc.ctex"
+path.s3tc="res://.godot/imported/candle_low_1.png-192bb69b6d2497f3727db8cc7399e52c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Candles/candle_low_1.png"
-dest_files=["res://.godot/imported/candle_low_1.png-23cbf23b49a18f75757b742113cc7481.s3tc.ctex"]
+source_file="res://Main/Assets/Candles/candle_low_1.png"
+dest_files=["res://.godot/imported/candle_low_1.png-192bb69b6d2497f3727db8cc7399e52c.s3tc.ctex"]
 
 [params]
 

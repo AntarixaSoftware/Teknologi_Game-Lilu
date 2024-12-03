@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bve35r1dtw4kp"
-path.s3tc="res://.godot/imported/FinalWorld_worn_corrugated_iron_rough_1k.png-113f8c4a44b6621b3cc7e68168ff98ad.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_worn_corrugated_iron_rough_1k.png-ae06460dad47112fc928ad5427db57e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Buildings/Cabin/FinalWorld_worn_corrugated_iron_rough_1k.png"
-dest_files=["res://.godot/imported/FinalWorld_worn_corrugated_iron_rough_1k.png-113f8c4a44b6621b3cc7e68168ff98ad.s3tc.ctex"]
+source_file="res://Main/Assets/Buildings/Cabin/FinalWorld_worn_corrugated_iron_rough_1k.png"
+dest_files=["res://.godot/imported/FinalWorld_worn_corrugated_iron_rough_1k.png-ae06460dad47112fc928ad5427db57e1.s3tc.ctex"]
 
 [params]
 

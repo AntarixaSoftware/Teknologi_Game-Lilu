@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w60q6drcq47y"
-path.s3tc="res://.godot/imported/Begu_ganjang_HM_fixed_animated_origin_Material.png-46dc1f58875fa00d02d57324fb34c10b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Begu_ganjang_HM_fixed_animated_origin_Material.png-45299607af92592f9308e43277ba4eb3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Enemy/Begu_ganjang_HM_fixed_animated_origin_Material.png"
-dest_files=["res://.godot/imported/Begu_ganjang_HM_fixed_animated_origin_Material.png-46dc1f58875fa00d02d57324fb34c10b.s3tc.ctex"]
+source_file="res://Main/Assets/Enemy/Begu_ganjang_HM_fixed_animated_origin_Material.png"
+dest_files=["res://.godot/imported/Begu_ganjang_HM_fixed_animated_origin_Material.png-45299607af92592f9308e43277ba4eb3.s3tc.ctex"]
 
 [params]
 

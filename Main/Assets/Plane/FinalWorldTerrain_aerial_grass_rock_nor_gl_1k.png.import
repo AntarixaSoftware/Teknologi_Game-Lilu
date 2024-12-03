@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdq1dykwrc6d1"
-path.s3tc="res://.godot/imported/FinalWorldTerrain_aerial_grass_rock_nor_gl_1k.png-5a32f5c19b1fb9906b11749914d33223.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorldTerrain_aerial_grass_rock_nor_gl_1k.png-853814bce804d143c33ce395f1077a2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorldTerrain_aerial_grass_rock_nor_gl_1k.png"
-dest_files=["res://.godot/imported/FinalWorldTerrain_aerial_grass_rock_nor_gl_1k.png-5a32f5c19b1fb9906b11749914d33223.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorldTerrain_aerial_grass_rock_nor_gl_1k.png"
+dest_files=["res://.godot/imported/FinalWorldTerrain_aerial_grass_rock_nor_gl_1k.png-853814bce804d143c33ce395f1077a2d.s3tc.ctex"]
 
 [params]
 

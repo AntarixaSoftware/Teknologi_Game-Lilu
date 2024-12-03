@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3at6cyxe2lxm"
-path="res://.godot/imported/newmansion.glb-85eab46be06f201c96c6f5875447e6d1.scn"
+path="res://.godot/imported/newmansion.glb-6c0c8a69514b38c1c61b1ca5d321b44f.scn"
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Buildings/Mansion/newmansion.glb"
-dest_files=["res://.godot/imported/newmansion.glb-85eab46be06f201c96c6f5875447e6d1.scn"]
+source_file="res://Main/Assets/Buildings/Mansion/newmansion.glb"
+dest_files=["res://.godot/imported/newmansion.glb-6c0c8a69514b38c1c61b1ca5d321b44f.scn"]
 
 [params]
 

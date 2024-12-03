@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bincdy5cila2k"
-path="res://.godot/imported/BloodOverlay.png-39cc3673660dcc4e5e7034d91eea3a31.ctex"
+path="res://.godot/imported/BloodOverlay.png-2af16c3ae55d49f6167253da5aaf4312.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main_Branch/Assets/From Inventory/BloodOverlay.png"
-dest_files=["res://.godot/imported/BloodOverlay.png-39cc3673660dcc4e5e7034d91eea3a31.ctex"]
+source_file="res://Main/Assets/From Inventory/BloodOverlay.png"
+dest_files=["res://.godot/imported/BloodOverlay.png-2af16c3ae55d49f6167253da5aaf4312.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://7t4mgxbr8hfs"
-path="res://.godot/imported/dialog2.mp3-66ce27d6a3c26011bca46ad5ab5bc657.mp3str"
+path="res://.godot/imported/dialog2.mp3-786528f978f2fd62c25e34522b7f7cf4.mp3str"
 
 [deps]
 
-source_file="res://Main_Branch/Dialog_sound/dialog2.mp3"
-dest_files=["res://.godot/imported/dialog2.mp3-66ce27d6a3c26011bca46ad5ab5bc657.mp3str"]
+source_file="res://Main/Dialog_sound/dialog2.mp3"
+dest_files=["res://.godot/imported/dialog2.mp3-786528f978f2fd62c25e34522b7f7cf4.mp3str"]
 
 [params]
 

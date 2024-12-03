@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj6debegx8ni7"
-path.s3tc="res://.godot/imported/FinalWorld_Rock-Texture-Surface.jpg-519aa0f6005a1f0447176becdc1aa4d6.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_Rock-Texture-Surface.jpg-ca9304c938530337c500d57dae489bb5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_Rock-Texture-Surface.jpg"
-dest_files=["res://.godot/imported/FinalWorld_Rock-Texture-Surface.jpg-519aa0f6005a1f0447176becdc1aa4d6.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_Rock-Texture-Surface.jpg"
+dest_files=["res://.godot/imported/FinalWorld_Rock-Texture-Surface.jpg-ca9304c938530337c500d57dae489bb5.s3tc.ctex"]
 
 [params]
 

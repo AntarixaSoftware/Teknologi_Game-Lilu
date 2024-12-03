@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqsgqcjsgt0ja"
-path.s3tc="res://.godot/imported/FinalWorld_brown_planks_08_diff_1k.png-25da27ae8e73e36b83de0aabd28f732c.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_brown_planks_08_diff_1k.png-7756a4dc57a4a0952ad6680f197448ab.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_brown_planks_08_diff_1k.png"
-dest_files=["res://.godot/imported/FinalWorld_brown_planks_08_diff_1k.png-25da27ae8e73e36b83de0aabd28f732c.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_brown_planks_08_diff_1k.png"
+dest_files=["res://.godot/imported/FinalWorld_brown_planks_08_diff_1k.png-7756a4dc57a4a0952ad6680f197448ab.s3tc.ctex"]
 
 [params]
 

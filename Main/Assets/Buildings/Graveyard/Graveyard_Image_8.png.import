@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://upmbihv6fd05"
-path.s3tc="res://.godot/imported/Graveyard_Image_8.png-9b13f85865c50658462f8b182aa15145.s3tc.ctex"
+path.s3tc="res://.godot/imported/Graveyard_Image_8.png-4e6aa10c0fc6237a073aa9bb965abc54.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Buildings/Graveyard/Graveyard_Image_8.png"
-dest_files=["res://.godot/imported/Graveyard_Image_8.png-9b13f85865c50658462f8b182aa15145.s3tc.ctex"]
+source_file="res://Main/Assets/Buildings/Graveyard/Graveyard_Image_8.png"
+dest_files=["res://.godot/imported/Graveyard_Image_8.png-4e6aa10c0fc6237a073aa9bb965abc54.s3tc.ctex"]
 
 [params]
 

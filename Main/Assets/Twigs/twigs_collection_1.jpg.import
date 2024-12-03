@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xlsxov2cclav"
-path.s3tc="res://.godot/imported/twigs_collection_1.jpg-0716ca8213de8f6746699f3e206aed79.s3tc.ctex"
+path.s3tc="res://.godot/imported/twigs_collection_1.jpg-0d34183001b6d862c6f87b7888e90596.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Twigs/twigs_collection_1.jpg"
-dest_files=["res://.godot/imported/twigs_collection_1.jpg-0716ca8213de8f6746699f3e206aed79.s3tc.ctex"]
+source_file="res://Main/Assets/Twigs/twigs_collection_1.jpg"
+dest_files=["res://.godot/imported/twigs_collection_1.jpg-0d34183001b6d862c6f87b7888e90596.s3tc.ctex"]
 
 [params]
 

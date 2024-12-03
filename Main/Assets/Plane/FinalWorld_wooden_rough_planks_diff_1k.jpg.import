@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdpxi5gc2u6pi"
-path.s3tc="res://.godot/imported/FinalWorld_wooden_rough_planks_diff_1k.jpg-e249b615264a39bab0fdd3794c4ac867.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_wooden_rough_planks_diff_1k.jpg-a553be6f6a851d1044e1908c6a716d30.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_wooden_rough_planks_diff_1k.jpg"
-dest_files=["res://.godot/imported/FinalWorld_wooden_rough_planks_diff_1k.jpg-e249b615264a39bab0fdd3794c4ac867.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_wooden_rough_planks_diff_1k.jpg"
+dest_files=["res://.godot/imported/FinalWorld_wooden_rough_planks_diff_1k.jpg-a553be6f6a851d1044e1908c6a716d30.s3tc.ctex"]
 
 [params]
 

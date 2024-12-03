@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://drdtf7ku6o02o"
-path="res://.godot/imported/door-locked.mp3-f44bf2601e9e71653c683d050d60d010.mp3str"
+path="res://.godot/imported/door-locked.mp3-0d2ba8c2791eca3e2af7a1b6f25bda0b.mp3str"
 
 [deps]
 
-source_file="res://Main_Branch/Sound/door-locked.mp3"
-dest_files=["res://.godot/imported/door-locked.mp3-f44bf2601e9e71653c683d050d60d010.mp3str"]
+source_file="res://Main/Sound/door-locked.mp3"
+dest_files=["res://.godot/imported/door-locked.mp3-0d2ba8c2791eca3e2af7a1b6f25bda0b.mp3str"]
 
 [params]
 

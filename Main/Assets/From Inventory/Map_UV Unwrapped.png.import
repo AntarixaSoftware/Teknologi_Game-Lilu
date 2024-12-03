@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv2kaj2bisa3u"
-path.s3tc="res://.godot/imported/Map_UV Unwrapped.png-8b5b780df10796e1c68287d891965610.s3tc.ctex"
+path.s3tc="res://.godot/imported/Map_UV Unwrapped.png-5fd23f2c4c620bcd669d136df2cd5f2a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/From Inventory/Map_UV Unwrapped.png"
-dest_files=["res://.godot/imported/Map_UV Unwrapped.png-8b5b780df10796e1c68287d891965610.s3tc.ctex"]
+source_file="res://Main/Assets/From Inventory/Map_UV Unwrapped.png"
+dest_files=["res://.godot/imported/Map_UV Unwrapped.png-5fd23f2c4c620bcd669d136df2cd5f2a.s3tc.ctex"]
 
 [params]
 

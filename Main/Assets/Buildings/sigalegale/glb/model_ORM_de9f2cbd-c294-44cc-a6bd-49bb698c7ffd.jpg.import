@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1o0y7gmwdys4"
-path.s3tc="res://.godot/imported/model_ORM_de9f2cbd-c294-44cc-a6bd-49bb698c7ffd.jpg-5958df105fd2c6406b5ce0b68f46ec45.s3tc.ctex"
+path.s3tc="res://.godot/imported/model_ORM_de9f2cbd-c294-44cc-a6bd-49bb698c7ffd.jpg-4a8786a3b966e63630dc7bdb991bc913.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Buildings/sigalegale/glb/model_ORM_de9f2cbd-c294-44cc-a6bd-49bb698c7ffd.jpg"
-dest_files=["res://.godot/imported/model_ORM_de9f2cbd-c294-44cc-a6bd-49bb698c7ffd.jpg-5958df105fd2c6406b5ce0b68f46ec45.s3tc.ctex"]
+source_file="res://Main/Assets/Buildings/sigalegale/glb/model_ORM_de9f2cbd-c294-44cc-a6bd-49bb698c7ffd.jpg"
+dest_files=["res://.godot/imported/model_ORM_de9f2cbd-c294-44cc-a6bd-49bb698c7ffd.jpg-4a8786a3b966e63630dc7bdb991bc913.s3tc.ctex"]
 
 [params]
 

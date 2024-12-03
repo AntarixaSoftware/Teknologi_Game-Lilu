@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fx2cuff4o1tx"
-path.s3tc="res://.godot/imported/bolon_house_textured_join_wood_peeling_paint_weathered_nor_gl_1k.png-63b258ccc8f7871cd6008c977c713690.s3tc.ctex"
+path.s3tc="res://.godot/imported/bolon_house_textured_join_wood_peeling_paint_weathered_nor_gl_1k.png-2b58309a8a8ecad02a0fed138c0ac00f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Buildings/House/bolon_house_textured_join_wood_peeling_paint_weathered_nor_gl_1k.png"
-dest_files=["res://.godot/imported/bolon_house_textured_join_wood_peeling_paint_weathered_nor_gl_1k.png-63b258ccc8f7871cd6008c977c713690.s3tc.ctex"]
+source_file="res://Main/Assets/Buildings/House/bolon_house_textured_join_wood_peeling_paint_weathered_nor_gl_1k.png"
+dest_files=["res://.godot/imported/bolon_house_textured_join_wood_peeling_paint_weathered_nor_gl_1k.png-2b58309a8a8ecad02a0fed138c0ac00f.s3tc.ctex"]
 
 [params]
 

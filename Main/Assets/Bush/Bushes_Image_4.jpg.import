@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://k1rea327qfpf"
-path.s3tc="res://.godot/imported/Bushes_Image_4.jpg-635b0367696eb050c57cac6ac3da8d3c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bushes_Image_4.jpg-5df4601004fd8ea7d4c2d7e75efd9107.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Bush/Bushes_Image_4.jpg"
-dest_files=["res://.godot/imported/Bushes_Image_4.jpg-635b0367696eb050c57cac6ac3da8d3c.s3tc.ctex"]
+source_file="res://Main/Assets/Bush/Bushes_Image_4.jpg"
+dest_files=["res://.godot/imported/Bushes_Image_4.jpg-5df4601004fd8ea7d4c2d7e75efd9107.s3tc.ctex"]
 
 [params]
 

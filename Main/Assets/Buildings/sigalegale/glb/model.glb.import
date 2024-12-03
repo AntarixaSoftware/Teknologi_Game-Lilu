@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bjicbudyo7vv3"
-path="res://.godot/imported/model.glb-95229cbf13f0c597186bb033a3744bc6.scn"
+path="res://.godot/imported/model.glb-755799756a6b590080c166c473ff2460.scn"
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Buildings/sigalegale/glb/model.glb"
-dest_files=["res://.godot/imported/model.glb-95229cbf13f0c597186bb033a3744bc6.scn"]
+source_file="res://Main/Assets/Buildings/sigalegale/glb/model.glb"
+dest_files=["res://.godot/imported/model.glb-755799756a6b590080c166c473ff2460.scn"]
 
 [params]
 

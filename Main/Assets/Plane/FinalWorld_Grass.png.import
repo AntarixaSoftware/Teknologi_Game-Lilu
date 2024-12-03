@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3v8uvrog87ey"
-path.s3tc="res://.godot/imported/FinalWorld_Grass.png-241a7001b9bba66ae854201ffb952a00.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_Grass.png-917b9671acb6a97823f5f9c401248917.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_Grass.png"
-dest_files=["res://.godot/imported/FinalWorld_Grass.png-241a7001b9bba66ae854201ffb952a00.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_Grass.png"
+dest_files=["res://.godot/imported/FinalWorld_Grass.png-917b9671acb6a97823f5f9c401248917.s3tc.ctex"]
 
 [params]
 

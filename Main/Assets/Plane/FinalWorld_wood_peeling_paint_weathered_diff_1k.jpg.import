@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt84280tyqnb0"
-path.s3tc="res://.godot/imported/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg-27548e25cd39cf868712a4e3499b746f.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg-f8b68b9e072ce6c4fc73f00f97c60536.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg"
-dest_files=["res://.godot/imported/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg-27548e25cd39cf868712a4e3499b746f.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg"
+dest_files=["res://.godot/imported/FinalWorld_wood_peeling_paint_weathered_diff_1k.jpg-f8b68b9e072ce6c4fc73f00f97c60536.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4pet4setx23"
-path.s3tc="res://.godot/imported/FinalWorld_boulder_01_diff.jpg-8f6f34b1c9a78dee593055062a078fa3.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_boulder_01_diff.jpg-14379ff9db9ab13a89cebdfc70a52631.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_boulder_01_diff.jpg"
-dest_files=["res://.godot/imported/FinalWorld_boulder_01_diff.jpg-8f6f34b1c9a78dee593055062a078fa3.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_boulder_01_diff.jpg"
+dest_files=["res://.godot/imported/FinalWorld_boulder_01_diff.jpg-14379ff9db9ab13a89cebdfc70a52631.s3tc.ctex"]
 
 [params]
 

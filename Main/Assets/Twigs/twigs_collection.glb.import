@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b10lvu4yn212"
-path="res://.godot/imported/twigs_collection.glb-014a60a814b564cd1ecde0bed7642998.scn"
+path="res://.godot/imported/twigs_collection.glb-c62ba7e5e450c2734941f9cbb8d97007.scn"
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Twigs/twigs_collection.glb"
-dest_files=["res://.godot/imported/twigs_collection.glb-014a60a814b564cd1ecde0bed7642998.scn"]
+source_file="res://Main/Assets/Twigs/twigs_collection.glb"
+dest_files=["res://.godot/imported/twigs_collection.glb-c62ba7e5e450c2734941f9cbb8d97007.scn"]
 
 [params]
 

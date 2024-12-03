@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://b8fw4lxe6a23g"
-path="res://.godot/imported/door-cabin.obj-aaac778c6c5c211a81689aeed82f5c7d.mesh"
+path="res://.godot/imported/door-cabin.obj-81256447b963170c676bceaa48e6369a.mesh"
 
 [deps]
 
-files=["res://.godot/imported/door-cabin.obj-aaac778c6c5c211a81689aeed82f5c7d.mesh"]
+files=["res://.godot/imported/door-cabin.obj-81256447b963170c676bceaa48e6369a.mesh"]
 
-source_file="res://Main_Branch/Assets/Buildings/Cabin/door-cabin.obj"
-dest_files=["res://.godot/imported/door-cabin.obj-aaac778c6c5c211a81689aeed82f5c7d.mesh", "res://.godot/imported/door-cabin.obj-aaac778c6c5c211a81689aeed82f5c7d.mesh"]
+source_file="res://Main/Assets/Buildings/Cabin/door-cabin.obj"
+dest_files=["res://.godot/imported/door-cabin.obj-81256447b963170c676bceaa48e6369a.mesh", "res://.godot/imported/door-cabin.obj-81256447b963170c676bceaa48e6369a.mesh"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpcuw0gfx0ogl"
-path.s3tc="res://.godot/imported/FinalWorld_Image_11.png-860ccd5a84437f1633a81114e748e889.s3tc.ctex"
+path.s3tc="res://.godot/imported/FinalWorld_Image_11.png-69cd40fdf8dee5d95caf7153d8109762.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/Plane/FinalWorld_Image_11.png"
-dest_files=["res://.godot/imported/FinalWorld_Image_11.png-860ccd5a84437f1633a81114e748e889.s3tc.ctex"]
+source_file="res://Main/Assets/Plane/FinalWorld_Image_11.png"
+dest_files=["res://.godot/imported/FinalWorld_Image_11.png-69cd40fdf8dee5d95caf7153d8109762.s3tc.ctex"]
 
 [params]
 

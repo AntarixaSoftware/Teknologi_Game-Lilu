@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blp2x62fhm3as"
-path.s3tc="res://.godot/imported/boulder_01_1k_boulder_01_diff.jpg-abce941d0f0f26b33ab13e189f2a04ac.s3tc.ctex"
+path.s3tc="res://.godot/imported/boulder_01_1k_boulder_01_diff.jpg-c62e00a3dc03bcf7e0f10a6bc52fca8e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Main_Branch/Assets/boulder_01_1k.blend/boulder_01_1k_boulder_01_diff.jpg"
-dest_files=["res://.godot/imported/boulder_01_1k_boulder_01_diff.jpg-abce941d0f0f26b33ab13e189f2a04ac.s3tc.ctex"]
+source_file="res://Main/Assets/boulder_01_1k.blend/boulder_01_1k_boulder_01_diff.jpg"
+dest_files=["res://.godot/imported/boulder_01_1k_boulder_01_diff.jpg-c62e00a3dc03bcf7e0f10a6bc52fca8e.s3tc.ctex"]
 
 [params]
 
