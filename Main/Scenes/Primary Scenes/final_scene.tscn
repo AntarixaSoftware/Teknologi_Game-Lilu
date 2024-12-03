@@ -1,0 +1,233 @@
+[gd_scene load_steps=32 format=3 uid="uid://7k3bw5iq312p"]
+
+[ext_resource type="PackedScene" uid="uid://3at6cyxe2lxm" path="res://Main_Branch/Assets/Buildings/Mansion/newmansion.glb" id="1_wrab8"]
+[ext_resource type="PackedScene" uid="uid://cljojvdia4nrx" path="res://Main_Branch/Scenes/Enviroments/foggy.tscn" id="1_ytxw1"]
+[ext_resource type="Script" path="res://Main_Branch/Scripts/Player/main_character.gd" id="2_b0hsl"]
+[ext_resource type="AudioStream" uid="uid://bwiswf5un7sb6" path="res://Main_Branch/Sound/OFF.mp3" id="3_ym3un"]
+[ext_resource type="AudioStream" uid="uid://dqx55hv4jvxdc" path="res://Main_Branch/Sound/ON.mp3" id="4_wblp7"]
+[ext_resource type="AudioStream" uid="uid://c2p7265rvxgka" path="res://Main_Branch/Sound/running-on-concrete-268478.mp3" id="5_7x2s6"]
+[ext_resource type="AudioStream" uid="uid://dw0bp2rw07uqy" path="res://Main_Branch/Sound/walking-soundscape-200112.mp3" id="6_6uwtb"]
+[ext_resource type="Script" path="res://Main_Branch/Scripts/Scene Scripts/ray_cast_3d.gd" id="7_lglct"]
+[ext_resource type="Script" path="res://Main_Branch/Scripts/Player/PlayerInteractionHandler.gd" id="8_f1g5q"]
+[ext_resource type="Script" path="res://Main_Branch/Scripts/inventory/ItemData.gd" id="9_nx1k3"]
+[ext_resource type="PackedScene" uid="uid://d4lmn7e6dgjss" path="res://Main_Branch/Scripts/inventory/key.tscn" id="10_1pwde"]
+[ext_resource type="PackedScene" uid="uid://dladsalwg3g7e" path="res://Main_Branch/Scripts/inventory/pz_1.tscn" id="11_horlj"]
+[ext_resource type="PackedScene" uid="uid://prr48pqcs53e" path="res://Main_Branch/Scripts/inventory/pz_2.tscn" id="12_b1xhe"]
+[ext_resource type="PackedScene" uid="uid://c8fewg57nkmb3" path="res://Main_Branch/Scripts/inventory/pz_3.tscn" id="13_00y8e"]
+[ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://Main_Branch/Scripts/inventory/pz_4.tscn" id="14_t4vcr"]
+[ext_resource type="Script" path="res://Main_Branch/Scripts/Quests/quest.gd" id="15_ufy0l"]
+[ext_resource type="PackedScene" uid="uid://v8ii46qq7l36" path="res://Main_Branch/Scenes/ItemUI.tscn" id="16_827yx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71xsp"]
+size = Vector3(1, 1, 1.1272)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o073n"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qjdae"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2a7q6"]
+height = 1.1019
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_khsq7"]
+
+[sub_resource type="Animation" id="Animation_14mcd"]
+resource_name = "Blood"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0i47"]
+_data = {
+"Blood": SubResource("Animation_14mcd")
+}
+
+[sub_resource type="Resource" id="Resource_b6xwd"]
+script = ExtResource("9_nx1k3")
+ItemName = "Key"
+ItemModelPrefab = ExtResource("10_1pwde")
+
+[sub_resource type="Resource" id="Resource_7831o"]
+script = ExtResource("9_nx1k3")
+ItemName = "Pz1"
+ItemModelPrefab = ExtResource("11_horlj")
+
+[sub_resource type="Resource" id="Resource_c24ba"]
+script = ExtResource("9_nx1k3")
+ItemName = "Pz2"
+ItemModelPrefab = ExtResource("12_b1xhe")
+
+[sub_resource type="Resource" id="Resource_xcfau"]
+script = ExtResource("9_nx1k3")
+ItemName = "Pz3"
+ItemModelPrefab = ExtResource("13_00y8e")
+
+[sub_resource type="Resource" id="Resource_q6lcb"]
+script = ExtResource("9_nx1k3")
+ItemName = "Pz4"
+ItemModelPrefab = ExtResource("14_t4vcr")
+
+[sub_resource type="Resource" id="Resource_vg8rb"]
+script = ExtResource("9_nx1k3")
+ItemName = ""
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o272n"]
+radius = 0.524898
+
+[node name="Final Scene" type="Node3D"]
+
+[node name="Foggy" parent="." instance=ExtResource("1_ytxw1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="newmansion" parent="." instance=ExtResource("1_wrab8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5132, -1.90735e-06, -13.86)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_71xsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_o073n")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, -4.37114e-08, -50, 0, 1, -2.18557e-06, 0, 25, -25)
+shape = SubResource("BoxShape3D_71xsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D3"]
+visible = false
+mesh = SubResource("BoxMesh_o073n")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, -4.37114e-08, -50, 0, 1, -2.18557e-06, 0, 27.6853, 25)
+shape = SubResource("BoxShape3D_71xsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D4"]
+visible = false
+mesh = SubResource("BoxMesh_o073n")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-2.18557e-06, 1, -2.18557e-06, 0, -4.37114e-08, -50, -50, -4.37114e-08, 9.55343e-14, -23, 25, -1)
+shape = SubResource("BoxShape3D_71xsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D5"]
+visible = false
+mesh = SubResource("BoxMesh_o073n")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-2.18557e-06, 1, -2.18557e-06, 0, -4.37114e-08, -50, -50, -4.37114e-08, 9.55343e-14, 25, 25, -1)
+shape = SubResource("BoxShape3D_71xsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D6"]
+visible = false
+mesh = SubResource("BoxMesh_o073n")
+
+[node name="Main Character" type="CharacterBody3D" parent="." groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6404, 3.06221, -18.0814)
+script = ExtResource("2_b0hsl")
+
+[node name="Off" type="AudioStreamPlayer" parent="Main Character"]
+stream = ExtResource("3_ym3un")
+
+[node name="On" type="AudioStreamPlayer" parent="Main Character"]
+stream = ExtResource("4_wblp7")
+
+[node name="Running-on-concrete-268478" type="AudioStreamPlayer" parent="Main Character"]
+stream = ExtResource("5_7x2s6")
+
+[node name="Walking-soundscape-200112" type="AudioStreamPlayer" parent="Main Character"]
+stream = ExtResource("6_6uwtb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main Character"]
+transform = Transform3D(-0.999993, -0.00382999, -3.5641e-05, -0.00382999, 0.999819, 0.0186555, -3.58158e-05, 0.0186555, -0.999826, -0.000573158, -2.68221e-05, 0.00276184)
+mesh = SubResource("CapsuleMesh_qjdae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character"]
+transform = Transform3D(-0.999993, -0.00382999, -3.5641e-05, -0.00382999, 0.999819, 0.0186555, -3.58158e-05, 0.0186555, -0.999826, 0.00114632, -0.448778, -0.00561523)
+shape = SubResource("CapsuleShape3D_2a7q6")
+
+[node name="Head" type="Node3D" parent="Main Character"]
+transform = Transform3D(-0.999993, -0.00382999, -3.5641e-05, -0.00382999, 0.999819, 0.0186555, -3.58158e-05, 0.0186555, -0.999826, -0.000573158, -2.68221e-05, 0.00276184)
+
+[node name="Camera3D" type="Camera3D" parent="Main Character/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Main Character/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.48488e-08, 0, -0.480488)
+script = ExtResource("7_lglct")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Main Character/Head/Camera3D"]
+light_color = Color(0.771603, 0.647582, 0.56071, 1)
+light_energy = 4.0
+light_volumetric_fog_energy = 0.1
+spot_range = 100.0
+spot_attenuation = 0.5
+spot_angle_attenuation = 3.0
+
+[node name="TextureRect" type="TextureRect" parent="Main Character/Head/Camera3D"]
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = SubResource("CompressedTexture2D_khsq7")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Character/Head/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_u0i47")
+}
+
+[node name="InteractionArea" type="Area3D" parent="Main Character" node_paths=PackedStringArray("quest")]
+transform = Transform3D(0.717386, 0, 0, 0, 2.15134, 0, 0, 0, 2.05812, 0, 0, -0.514962)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_f1g5q")
+ItemTypes = Array[ExtResource("9_nx1k3")]([SubResource("Resource_b6xwd"), SubResource("Resource_7831o"), SubResource("Resource_c24ba"), SubResource("Resource_xcfau"), SubResource("Resource_q6lcb"), SubResource("Resource_vg8rb")])
+quest = NodePath("key")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main Character/InteractionArea"]
+transform = Transform3D(2.91269, 0, 0, 0, 0.940191, 0, 0, 0, 1.03709, 0, 0, 0)
+shape = SubResource("SphereShape3D_o272n")
+
+[node name="key" type="Node2D" parent="Main Character/InteractionArea"]
+script = ExtResource("15_ufy0l")
+quest_name = "Find a key"
+quest_desc = "Find a key arround the Cabin"
+reached_goal_text = "You've found the key! one step ahead!"
+
+[node name="ItemUi" parent="Main Character" instance=ExtResource("16_827yx")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Main Character/ItemUi"]
+transform = Transform3D(0.707107, -2.98023e-08, -0.707107, -0.183013, 0.965926, -0.183013, 0.683013, 0.258819, 0.683013, -0.61335, 0.530251, -0.208679)
+light_color = Color(0.991637, 0.843225, 0.766374, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.015
+omni_range = 22.145
+omni_attenuation = 1.055
+
+[connection signal="body_entered" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectEnteredArea"]
+[connection signal="body_exited" from="Main Character/InteractionArea" to="Main Character/InteractionArea" method="OnObjectExitedArea"]
