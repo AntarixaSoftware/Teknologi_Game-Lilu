@@ -1,4 +1,4 @@
-class_name QuestManager extends Node2D
+extends Node2D
 
 @onready var QuestBox : CanvasLayer = GameManager.get_node('QuestBox')
 @onready var QuestTitle : RichTextLabel = GameManager.get_node('QuestBox').get_node('QuestName')

@@ -2,20 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://3at6cyxe2lxm" path="res://Main/Assets/Buildings/Mansion/newmansion.glb" id="1_wrab8"]
 [ext_resource type="PackedScene" uid="uid://cljojvdia4nrx" path="res://Main/Scenes/Enviroments/foggy.tscn" id="1_ytxw1"]
-[ext_resource type="Script" path="res://Main/Scripts/Player/main_character.gd" id="2_b0hsl"]
+[ext_resource type="Script" uid="uid://dpx7l5vpxr4aq" path="res://Main/Scripts/Player/main_character.gd" id="2_b0hsl"]
 [ext_resource type="AudioStream" uid="uid://bwiswf5un7sb6" path="res://Main/Sound/OFF.mp3" id="3_ym3un"]
 [ext_resource type="AudioStream" uid="uid://dqx55hv4jvxdc" path="res://Main/Sound/ON.mp3" id="4_wblp7"]
 [ext_resource type="AudioStream" uid="uid://c2p7265rvxgka" path="res://Main/Sound/running-on-concrete-268478.mp3" id="5_7x2s6"]
 [ext_resource type="AudioStream" uid="uid://dw0bp2rw07uqy" path="res://Main/Sound/walking-soundscape-200112.mp3" id="6_6uwtb"]
-[ext_resource type="Script" path="res://Main/Scripts/Scene Scripts/ray_cast_3d.gd" id="7_lglct"]
-[ext_resource type="Script" path="res://Main/Scripts/Player/PlayerInteractionHandler.gd" id="8_f1g5q"]
-[ext_resource type="Script" path="res://Main/Scripts/inventory/ItemData.gd" id="9_nx1k3"]
+[ext_resource type="Script" uid="uid://2icxxxy0aap6" path="res://Main/Scripts/Scene Scripts/ray_cast_3d.gd" id="7_lglct"]
+[ext_resource type="Script" uid="uid://b1jthd12dhd5" path="res://Main/Scripts/Player/PlayerInteractionHandler.gd" id="8_f1g5q"]
+[ext_resource type="Script" uid="uid://brkdstu80befv" path="res://Main/Scripts/inventory/ItemData.gd" id="9_nx1k3"]
 [ext_resource type="PackedScene" uid="uid://d4lmn7e6dgjss" path="res://Main/Scripts/inventory/key.tscn" id="10_1pwde"]
 [ext_resource type="PackedScene" uid="uid://dladsalwg3g7e" path="res://Main/Scripts/inventory/pz_1.tscn" id="11_horlj"]
 [ext_resource type="PackedScene" uid="uid://prr48pqcs53e" path="res://Main/Scripts/inventory/pz_2.tscn" id="12_b1xhe"]
 [ext_resource type="PackedScene" uid="uid://c8fewg57nkmb3" path="res://Main/Scripts/inventory/pz_3.tscn" id="13_00y8e"]
 [ext_resource type="PackedScene" uid="uid://cr4ri43jfi54" path="res://Main/Scripts/inventory/pz_4.tscn" id="14_t4vcr"]
-[ext_resource type="Script" path="res://Main/Scripts/Quests/quest.gd" id="15_ufy0l"]
+[ext_resource type="Script" uid="uid://dehs8ih8efikl" path="res://Main/Scripts/Quests/quest.gd" id="15_ufy0l"]
 [ext_resource type="PackedScene" uid="uid://v8ii46qq7l36" path="res://Main/Scenes/ItemUI.tscn" id="16_827yx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71xsp"]
@@ -60,7 +60,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0i47"]
 _data = {
-"Blood": SubResource("Animation_14mcd")
+&"Blood": SubResource("Animation_14mcd")
 }
 
 [sub_resource type="Resource" id="Resource_b6xwd"]
@@ -197,7 +197,7 @@ expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Main Character/Head/Camera3D"]
 libraries = {
-"": SubResource("AnimationLibrary_u0i47")
+&"": SubResource("AnimationLibrary_u0i47")
 }
 
 [node name="InteractionArea" type="Area3D" parent="Main Character" node_paths=PackedStringArray("quest")]
@@ -214,11 +214,9 @@ shape = SubResource("SphereShape3D_o272n")
 
 [node name="key" type="Node2D" parent="Main Character/InteractionArea"]
 script = ExtResource("15_ufy0l")
-quest_name = "Find a key"
-quest_desc = "Find a key arround the Cabin"
-reached_goal_text = "You've found the key! one step ahead!"
 
 [node name="ItemUi" parent="Main Character" instance=ExtResource("16_827yx")]
+script = null
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Main Character/ItemUi"]
 transform = Transform3D(0.707107, -2.98023e-08, -0.707107, -0.183013, 0.965926, -0.183013, 0.683013, 0.258819, 0.683013, -0.61335, 0.530251, -0.208679)
